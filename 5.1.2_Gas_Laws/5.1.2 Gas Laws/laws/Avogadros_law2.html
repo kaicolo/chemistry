@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Avogadro's Law</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="../javascript/jQueryRotate.js"></script>
+
+<script src="../javascript/CanvasApp.js"></script>
+
+<script src="../javascript/modernizr-2.6.2.js"></script>
+
+
+<script>
+window.onload = init;
+ 
+// Constants to define the box dimensions
+const MIN_X = 30;
+const MIN_Y = 30;
+const WIDTH = 165;
+const HEIGHT = 200;
+const MAX_X = MIN_X + WIDTH - 60;
+const MAX_Y = MIN_Y + HEIGHT - 60;
+ 
+// The ball
+var ballRadius = 35;
+var ballSize = ballRadius*2 + 1;
+// Randomly place the initial ball within the box, slightly off from border
+var ballCenterX = (WIDTH - 2*ballSize)*Math.random() + (MIN_X + ballSize);
+var ballCenterY = (HEIGHT - 2*ballSize)*Math.random() + (MIN_Y + ballSize);
+// Initial speed
+var ballSpeedX = 2;
+var ballSpeedY = 1;
+ 
+function init() {
+   var box = document.getElementById("hull");
+   // Position the box absolutely via CSS style
+   box.style.left = (MIN_X - 5) + "px";  // unit in px (pixels)
+   box.style.top = (MIN_Y - 5) + "px";
+   box.style.width = WIDTH + "px";
+   box.style.height = HEIGHT + "px";
+ 
+   var balls = document.getElementsByName("ball");
+
+   // Position the ball image absolutely via CSS style
+   balls[0].style.left = (ballCenterX - ballRadius) + "px";
+   balls[0].style.top  = (ballCenterY - ballRadius) + "px";
+   balls[0].style.width = ballSize + "px";
+   balls[0].style.height = ballSize + "px";
+   
+   
+
+ 
+   moveOneStep();
+}
+ 
+function moveOneStep() {
+   // Calculate the ball's new position
+   ballCenterX += ballSpeedX;
+   ballCenterY += ballSpeedY;
+   // Check if the ball moves over the bounds
+   // If so, adjust the position and speed.
+   if (ballCenterX - ballRadius < MIN_X) {
+      ballSpeedX = -ballSpeedX; // Reflect along normal
+      ballCenterX = MIN_X + ballRadius; // Re-position the ball at the edge
+   } else if (ballCenterX + ballRadius > MAX_X) {
+      ballSpeedX = -ballSpeedX;
+      ballCenterX = MAX_X - ballRadius;
+   }
+   // May cross both x and y bounds
+   if (ballCenterY - ballRadius < MIN_Y) {
+      ballSpeedY = -ballSpeedY;
+      ballCenterY = MIN_Y + ballRadius;
+   } else if (ballCenterY + ballRadius > MAX_Y) {
+      ballSpeedY = -ballSpeedY;
+      ballCenterY = MAX_Y - ballRadius;
+   }
+ 
+   var balls = document.getElementsByName("ball");
+
+   balls[0].style.left = (ballCenterX - ballRadius) + "px";
+   balls[0].style.top  = (ballCenterY - ballRadius) + "px";
+ 
+   // Recursively call move after the specified msec
+   setTimeout("moveOneStep()", 60);
+}
+</script>
+
+
+<style type="text/css">
+#container {
+	background-image:url(../images/velvet_background.png);
+	width:720px;
+	height:480px;
+	padding:10px;
+}
+
+
+#dashboard {
+	background-image:url(../images/dashboard5.png);
+	width:550px;
+	height:460px;
+	padding:10px;
+	float:left;
+	border-top-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+}
+
+#hull {
+	width:269px;
+	height:420px;
+	float:left;
+	padding:20px;	
+}
+
+
+
+
+
+#controls {
+	width:230px;
+	height:460px;
+	float: right;
+	margin-left:10px;
+	text-align:center;
+}
+
+
+#dialFace {
+	background-image:url(../images/dial_face.png);
+	width:160px;
+	height:160px;
+	margin-left:;
+	margin-right:6px;
+	margin-top:75px;
+	margin-bottom:25px;
+	float:right;
+}
+
+#button_more {
+	background-image: url(../images/more.png);
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	line-height: 70px;
+	position: absolute;
+	z-index: 1000;
+	left: 158px;
+	top: 425px;
+}
+
+
+#button_more:hover {
+	background-image: url(../images/more_over.png);
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	line-height: 70px;
+	position: absolute;
+	z-index: 1000;
+	left: 158px;
+	top: 425px;
+}
+
+
+
+#navigation {
+	width:150px;
+	height:480px;
+	float:left;
+	padding-top:1px;
+}
+
+.nav_button {
+	width:auto;
+	height:119px;
+	background-color:#1F53A1;
+	margin-bottom:1px;
+	text-align:center;
+	line-height:119px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+.nav_button:hover {
+	width:auto;
+	height:119px;
+	background-color:#39F;
+	margin-bottom:1px;
+	text-align:center;
+	line-height:119px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+
+.nav_buttonSelect {
+	width:auto;
+	height:119px;
+	background-color:#003;
+	margin-bottom:1px;
+	text-align:center;
+	line-height:119px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+
+
+#number {
+	background-image: url(../images/volume_strip.png);
+	width: 85px;
+	height: 380px;
+	position: absolute;
+	margin-top: px;
+	margin-left: px;
+	margin-bottom: px;
+	bottom: 0px;
+	left: -2px;
+}
+
+.counter {
+	width: 85px;
+	height: 73px;
+	position: relative;
+	z-index: 700;
+	float: left;
+	margin-top: ;
+	margin-left: px;
+	overflow: hidden;
+	position: absolute;
+	left: 423px;
+	top: 62px;
+}
+
+#dial {
+	width: 93px;
+	height: 93px;
+	position: absolute;
+	transform: rotate(-60deg);
+	-ms-transform: rotate(-60deg); /* IE 9 */
+	-webkit-transform: rotate(-60deg); /* Safari and Chrome */
+	left: 418px;
+	top: 247px;
+}
+
+
+
+#balloon {
+	width: 53px;
+	height: 70px;
+	margin-left: px;
+	position: absolute;
+	left: 70px;
+}
+
+img.ball {
+	
+}
+
+#cylinder_button {
+	background-image: url(../images/cylinder_button.png);
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	cursor: pointer;
+	left: 428px;
+	top: 400px;
+}
+
+#cylinder_button:hover {
+	background-image: url(../images/cylinder_buttonOver.png);
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	cursor: pointer;
+	left: 428px;
+	top: 400px;
+}
+
+
+img { border:none; }
+
+<!--
+a:link {color: #fff; text-decoration: none; }
+a:active {color: #fff; text-decoration: none; }
+a:visited {color: #fff; text-decoration: none; }
+a:hover {color: #fff; text-decoration: none; }
+-->
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+$(document).ready(function(){
+  $("#button_more").toggle(function(){
+    $("#balloon").animate({height:139, width:105},700);
+  },function(){
+    $("#balloon").animate({height:208, width:158},700);
+	},function(){
+    $("#balloon").animate({height:277, width:210},700);
+	},function(){
+    $("#balloon").animate({height:347, width:263},700);
+	},function(){
+    $("#balloon").animate({height:70, width:53},700);
+  });
+  
+
+$("#button_more").toggle(function(){
+    $("#number").animate({height:301},2800);
+  },function(){
+    $("#number").animate({height:225},2800);
+	  },function(){
+    $("#number").animate({height:149},2800);
+	 },function(){
+    $("#number").animate({height:73},2800);
+	 },function(){
+    $("#number").animate({height:380},2800);
+});
+
+
+$("#button_more").toggle(function(){ 
+    var curAngle = parseInt($("#dial").getRotateAngle()) || -60;
+ $("#dial").rotate({angle: curAngle, animateTo: curAngle + 30, duration: 4000});
+  },function(){
+	     var curAngle = parseInt($("#dial").getRotateAngle()) || -30;
+    $("#dial").rotate({angle: curAngle, animateTo: curAngle +30, duration: 4000});
+	},function(){
+	     var curAngle = parseInt($("#dial").getRotateAngle()) || 0;
+    $("#dial").rotate({angle: curAngle, animateTo: curAngle +30, duration: 4000});
+	},function(){
+	     var curAngle = parseInt($("#dial").getRotateAngle()) || 0;
+    $("#dial").rotate({angle: curAngle, animateTo: curAngle +30, duration: 4000});
+	},function(){
+	var curAngle = parseInt($("#dial").getRotateAngle()) || 0;
+    $("#dial").rotate({angle: curAngle, animateTo: curAngle -118, duration: 4000});
+});
+
+
+});
+</script>
+
+
+
+
+<div id="container">
+<div id="dashboard">
+  <div id="hull">
+      
+
+  <div><img src="../images/balloon.png" id="balloon" name="ball" /></div>    
+    
+  </div>
+
+
+
+
+
+
+<div id="controls">
+  <div id="button_more"></div>
+  <div id="dial"><img src="../images/dial.png" onclick="rotateMe(this);" /></div>
+
+<div class="counter">
+<div id="number"></div>
+</div>
+
+<a href="Avogadros_law1.html"><div id="cylinder_button"></div></a>
+
+
+
+</div>
+</div>
+
+<div id="navigation">
+<a href="Boyles_law.html"><div class="nav_button">Boyles' Law</div></a>
+
+<a href="Charles_law.html"><div class="nav_button">Charles' Law</div></a>
+
+<a href="Gay_Lussac_law.html"><div class="nav_button">Gay-Lussac's Law</div></a>
+
+<div class="nav_buttonSelect">Avogradro's Law</div>
+</div>
+
+</div>
+
+</body>
+</html>
