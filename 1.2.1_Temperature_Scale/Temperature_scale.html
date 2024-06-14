@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Temperature Scale Diagram</title>
+
+<script type="text/javascript" src="javascript/dom-drag.js"></script>
+
+<style type="text/css">
+	#thumb {
+		position:absolute;
+		height:44px;
+		width:607px;
+		background-image:url(images/slide_rule.png);
+		opacity:0.7;
+		filter: alpha (opacity=70); /* For IE8 and earlier */
+		
+		}
+</style>
+
+
+</head>
+
+<body>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td background="images/Temperature-Scale_diagram.png"height="494">
+    
+    <div id="thumb" style="left:40px; top:120px;"></div>
+
+<script language="javascript">
+var aThumb = document.getElementById("thumb");
+Drag.init(aThumb, null, 40, 40, 120, 284);
+</script>
+    
+    </td>
+  </tr>
+</table>
+</body>
+</html>

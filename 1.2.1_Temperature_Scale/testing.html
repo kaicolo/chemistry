@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Limited Range Drag example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../ddincludes/devstyle.css" />
+<script type="text/javascript" src="javascript/dom-drag.js"></script>
+
+<style type="text/css">
+	#thumb {
+		position:absolute;
+		height:50px;
+		width:12px;
+		background-color:#eee;
+		border:1px outset #eee;
+		}
+</style>
+</head>
+
+<body>
+
+<p id="pathlinks"><a href="http://www.dynamicdrive.com/">Home</a> 
+<img border="0" src="../../ddincludes/arrow2.gif" width="8" height="10" />                                                        
+<a href="http://www.dynamicdrive.com/dynamicindex11/">Other</a> 
+<img border="0" src="../../ddincludes/arrow2.gif" width="8" height="10" />
+<a href="index.htm">DOM Drag script</a> 
+<img border="0" src="../../ddincludes/arrow2.gif" width="8" height="10" /> 
+Limited Range Drag example</p>
+
+<div id="thumb" style="left:25px; top:50px;"></div>
+
+<script language="javascript">
+var aThumb = document.getElementById("thumb");
+Drag.init(aThumb, null, 25, 25, 50, 300);
+</script>
+
+</body>
+
+</html>
