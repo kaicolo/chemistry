@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>2.2.3 The pH Scale</title>
+
+
+  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+<style type="text/css">
+img {
+	border:0;
+}
+
+#scroll {
+	background-image: url(images/background.png);
+	position:relative;
+	overflow:hidden;
+	border:1px solid #999;
+	width:780px;
+	height:380px;
+	padding:10px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+#solutions {
+	width: 9999em;
+	position: absolute;
+	height: 300px;
+	top: 10px;
+}
+
+.solution {
+	float:left;
+	width:800px;
+	height:300px;
+	text-align:center;
+}
+
+
+.details {
+	position: absolute;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #555;
+	padding: 10px;
+	z-index: 100;
+	width: 196px;
+	text-align: right;
+}
+
+.equation {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:18px;
+}
+
+#hydrogen_0 {
+	width: 163px;
+	height: 163px;
+	position: absolute;
+	left: 443px;
+	top: 22px;
+}
+
+#hydrogen_1 {
+	width: 163px;
+	height: 163px;
+	position: absolute;
+	left: 1243px;
+	top: 22px;
+}
+
+#pH {
+	background: url() no-repeat;
+	height:80px;
+	position:absolute;
+	top:320px;
+	width:800px;
+	left:20px;
+}
+
+.t {
+	padding:0 !important;
+	border:0 !important;
+}
+
+.t a {
+	background:transparent url(images/pH_navi.png) no-repeat scroll -51px -80px;
+	margin-left:0px;
+	display:block;
+	width:51px;
+	float:left;
+	height:80px;
+	cursor:pointer;
+}
+
+.t a.active {
+	cursor:default !important;
+}
+
+
+
+.navi {
+	margin-left:0px;
+	_margin-left:0px;
+}
+
+/* CSS sprite for the navigation */
+#t0			{ background-position:0px -80px; margin-right:-5px;}
+#t0:hover 	{ background-position:0px -160px; }
+#t0:active	{ background-position:0px -240px; }
+#t0.active	{ background-position:0px 0px !important; }
+
+#t1			{ background-position:-48px -80px;}
+#t1:hover 	{ background-position:-48px -160px;}
+#t1:active	{ background-position:-48px -240px; }
+#t1.active	{ background-position:-48px 0px !important; }
+
+#t2			{ background-position:-102px -80px;}
+#t2:hover 	{ background-position:-102px -160px;}
+#t2:active	{ background-position:-102px -240px; }
+#t2.active	{ background-position:-102px 0px !important; }
+
+#t3			{ background-position:-153px -80px;}
+#t3:hover 	{ background-position:-153px -160px;}
+#t3:active	{ background-position:-153px -240px; }
+#t3.active	{ background-position:-153px 0px !important; }
+
+#t4			{ background-position:-206px -80px;}
+#t4:hover 	{ background-position:-206px -160px;}
+#t4:active	{ background-position:-206px -240px; }
+#t4.active	{ background-position:-206px 0px!important; }
+
+#t5			{ background-position:-259px -80px;}
+#t5:hover 	{ background-position:-259px -160px; }
+#t5:active	{ background-position:-259px -240px; }
+#t5.active	{ background-position:-259px 0px !important; }
+
+#t6			{ background-position:-311px -80px; }
+#t6:hover 	{ background-position:-311px -160px; }
+#t6:active	{ background-position:-311px -240px; }
+#t6.active	{ background-position:-311px 0px !important; }
+
+#t7			{ background-position:-364px -80px; }
+#t7:hover 	{ background-position:-364px -160px; }
+#t7:active	{ background-position:-364px -240px; }
+#t7.active	{ background-position:-364px 0px !important; }
+
+#t8			{ background-position:-417px -80px;}
+#t8:hover 	{ background-position:-417px -160px;}
+#t8:active	{ background-position:-417px -240px; }
+#t8.active	{ background-position:-417px 0px!important; }
+
+#t9			{ background-position:-470px -80px;}
+#t9:hover 	{ background-position:-470px -160px; }
+#t9:active	{ background-position:-470px -240px; }
+#t9.active	{ background-position:-470px 0px !important; }
+
+#t10		{ background-position:-523px -80px;}
+#t10:hover 	{ background-position:-523px -160px; }
+#t10:active	{ background-position:-523px -240px; }
+#t10.active	{ background-position:-523px 0px !important; }
+
+#t11		{ background-position:-576px -80px;}
+#t11:hover 	{ background-position:-576px -160px; }
+#t11:active	{ background-position:-576px -240px; }
+#t11.active	{ background-position:-576px 0px !important; }
+
+#t12		{ background-position:-628px -80px; }
+#t12:hover 	{ background-position:-628px -160px; }
+#t12:active	{ background-position:-628px -240px; }
+#t12.active	{ background-position:-628px 0px !important; }
+
+#t13		{ background-position:-681px -80px; }
+#t13:hover 	{ background-position:-681px -160px; }
+#t13:active	{ background-position:-681px -240px; }
+#t13.active	{ background-position:-681px 0px !important; }
+
+#t14		{ background-position:-734px -80px; }
+#t14:hover 	{ background-position:-734px -160px; }
+#t14:active	{ background-position:-734px -240px; }
+#t14.active	{ background-position:-734px 0px !important; }
+</style>
+
+
+
+</style>
+
+</head>
+
+<body>
+<!-- root element for everything -->
+<div id="scroll">
+
+<!-- scrollable items -->
+<div id="solutions">
+
+<!-- pH-0 -->
+    <div class="solution">
+    
+    <img src="images/0-battery_acid.png"/>
+
+      <div class="details" style="left: 62px; top: 181px;">
+	<span class="equation">1 x 10<sup>0</sup></span><br /> concentration of hydrogen ions
+      </div>
+  </div>
+  
+  
+  
+  <!-- pH-1 -->
+    <div class="solution">
+
+    
+    <img src="images/1-gastric_acid.png"/>
+
+      <div class="details" style="left: 872px; top: 181px;">
+	<span class="equation">1 x 10<sup>-1</sup></span><br /> concentration of hydrogen ions
+      </div>
+  </div>
+  
+  
+    <!-- pH-2 -->
+    <div class="solution">
+
+    
+    <img src="images/2-lemon_soda.png"/></div>
+    
+    <div class="details" style="left: 1660px; top: 181px;">
+	<span class="equation">1 x 10<sup>-2</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+          <!-- pH-3 -->
+    <div class="solution">
+
+    
+    <img src="images/3-vinegar_oranges.png"/></div>
+    
+    <div class="details" style="left: 2458px; top: 181px;">
+	<span class="equation">1 x 10<sup>-3</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+          <!-- pH-4 -->
+    <div class="solution">
+
+    
+    <img src="images/4-beer_coffee.png"/></div>
+    
+    <div class="details" style="left: 3257px; top: 181px;">
+	<span class="equation">1 x 10<sup>-4</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+                <!-- pH-5 -->
+    <div class="solution">
+
+    
+    <img src="images/5-rain_eggs.png"/></div>
+    
+    <div class="details" style="left: 4067px; top: 181px;">
+	<span class="equation">1 x 10<sup>-5</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+                      <!-- pH-6 -->
+    <div class="solution">
+
+    
+    <img src="images/6-milk.png"/></div>
+    
+    <div class="details" style="left: 4877px; top: 181px;">
+	<span class="equation">1 x 10<sup>-6</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+        <!-- pH-7 -->
+    <div class="solution">
+
+    
+    <img src="images/7-water_blood.png"/></div>
+    
+    <div class="details" style="left:5687px; top: 181px;">
+	<span class="equation">1 x 10<sup>-7</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+         <!-- pH-8 -->
+    <div class="solution">
+
+    
+    <img src="images/8-seawater.png"/></div>
+    
+    <div class="details" style="left: 6464px; top: 181px;">
+	<span class="equation">1 x 10<sup>-8</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+               <!-- pH-9 -->
+    <div class="solution">
+
+    
+    <img src="images/9-bakingsoda.png"/></div>
+    
+    <div class="details" style="left: 7274px; top: 181px;">
+	<span class="equation">1 x 10<sup>-9</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+                     <!-- pH-10 -->
+    <div class="solution">
+
+    
+    <img src="images/10-milkofmagnesia.png"/></div>
+    
+    <div class="details" style="left: 8084px; top: 181px;">
+	<span class="equation">1 x 10<sup>-10</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+      <!-- pH-11 -->
+    <div class="solution">
+
+    
+    <img src="images/11-ammonia.png"/></div>
+    
+    <div class="details" style="left: 8894px; top: 181px;">
+	<span class="equation">1 x 10<sup>-11</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+         <!-- pH-12 -->
+    <div class="solution">
+
+    
+    <img src="images/12-bleach.png"/></div>
+    
+    <div class="details" style="left: 9704px; top: 181px;">
+	<span class="equation">1 x 10<sup>-12</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+         <!-- pH-13 -->
+    <div class="solution">
+
+    
+    <img src="images/13-lye.png"/></div>
+    
+    <div class="details" style="left: 10514px; top: 181px;">
+	<span class="equation">1 x 10<sup>-13</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+         <!-- pH-14 -->
+    <div class="solution">
+
+    
+    <img src="images/14-sodiumhydroxide.png"/></div>
+    
+    <div class="details" style="left: 11324px; top: 181px;">
+	<span class="equation">1 x 10<sup>-14</sup></span><br /> concentration of hydrogen ions
+      </div>
+      
+      
+      
+      
+      
+  
+
+</div>
+<!-- (END scrollable items) -->
+
+
+<!-- required for IE6/IE7 -->
+  <br clear="all" />
+  
+  
+  <!-- thumbnails -->
+  <div id="pH" class="t">
+
+<!-- intro page navi button -->
+    <a id="t0" class="active"></a>   
+
+    <!-- scrollable navigator root element -->
+    <div class="navi">
+      <a style="display:none"></a>
+      <a id="t1"></a>
+      <a id="t2"></a>
+      <a style="display:none"></a>
+      <a id="t3"></a>
+      <a style="display:none"></a>
+      <a id="t4"></a>
+      <a style="display:none"></a>
+      <a id="t5"></a>
+      <a style="display:none"></a>
+      <a id="t6"></a>
+      <a style="display:none"></a>
+      <a id="t7"></a>
+      <a style="display:none"></a>
+      <a id="t8"></a>
+      <a style="display:none"></a>
+      <a id="t9"></a>
+      <a style="display:none"></a>
+      <a id="t10"></a>
+      <a style="display:none"></a>
+      <a id="t11"></a>
+      <a style="display:none"></a>
+      <a id="t12"></a>
+      <a style="display:none"></a>
+      <a id="t13"></a>
+      <a style="display:none"></a>
+      <a id="t14"></a>
+    </div>
+
+  </div>
+
+
+
+</div>
+<!-- (END root element for everything) -->
+
+<script>
+  // initialize scrollable and return the programming API
+  var api = $("#scroll").scrollable({
+  items: '#solutions'
+
+  // use the navigator plugin
+  }).navigator().data("scrollable");
+
+
+  // this callback does the special handling of our "intro page"
+  api.onBeforeSeek(function(e, i) {
+
+  // when on the first item: hide the intro
+  if (i) {
+  $("#intro").fadeOut("slow");
+
+  // dirty hack for IE7-. cannot explain
+  if ($.browser.msie && $.browser.version < 8) {
+			                    $("#intro").hide();
+		                            }
+
+	                                    // otherwise show the intro
+	                                    } else {
+		                            $("#intro").fadeIn(3000);
+	                                    }
+
+	                                    // toggle activity for the intro thumbnail
+	                                    $("#t0").toggleClass("active", i == 0);
+                                            });
+
+                                            // a dedicated click event for the intro thumbnail
+                                            $("#t0").click(function() {
+
+	                                    // seek to the beginning (the hidden first item)
+	                                    $("#scroll").scrollable().begin();
+
+                                            });
+
+</script>
+
+</body>
+</html>
