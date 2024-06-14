@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+
+  </head>
+
+  <body>
+<form name="form1" method="post" action="">
+    <label for="val1">Specific Heat</label><br />
+    <input type="text" name="val1" id="val1">
+  </form>
+<p>
+<form name="form2" method="post" action="">
+  <label for="val2">Mass</label><br />
+  <input type="text" name="val2" id="val2">
+</form>
+  </p>
+  
+  <p>
+<form name="form3" method="post" action="">
+  <label for="val3">Original Temperature</label><br />
+  <input type="text" name="val3" id="val3">
+</form>
+  </p>
+  
+    <p>
+<form name="form4" method="post" action="">
+  <label for="val4">Final Temperature</label><br />
+  <input type="text" name="val4" id="val4"><br />
+  <br /><span id="result1"></span>
+</form>
+  </p>
+
+  <p>
+
+    <p>
+
+  </p>
+  
+  <p>
+
+    <input type="button" name="calculate" id="calculate" value="Calculate">
+
+  </p>
+</form>
+
+<div id="result2"></div>
+
+
+
+<script type="text/javascript">
+var btn = document.getElementById('calculate');
+btn.onclick = function() {
+    // get the input values
+    var val1 = parseInt(document.getElementById('val1').value);
+    var val2 = parseInt(document.getElementById('val2').value);
+    var val3 = parseInt(document.getElementById('val3').value);
+	var val4 = parseInt(document.getElementById('val4').value);
+    // get the elements to hold the results
+    var result1 = document.getElementById('result1');
+    var result2 = document.getElementById('result2');
+    // create an empty array to hold error messages
+    var msg = [];
+    // check each input value, and add an error message
+    // to the array if it's not a number
+    if (isNaN(val1)) {
+        msg.push('X is not a number');
+    }
+    if (isNaN(val2)) {
+        msg.push('Y is not a number');
+    }
+    if (isNaN(val3)) {
+        msg.push('Z is not a number');
+    }
+	if (isNaN(val4)) {
+        msg.push('Z is not a number');
+    }
+	
+    // if the array contains any values, display the error message(s)
+    // as a comma-separated string in the first <span> element
+    if (msg.length > 0) {
+        result1.innerHTML = msg.join(', ');
+    } else {
+        // otherwise display the results in the <span> elements
+    
+        result1.innerHTML = 'SH x (Mass) x ΔT = ' + val1 * val2 * (val4 - val3) + " J ";
+    }
+};
+</script>
+
+  </body>
+</html>

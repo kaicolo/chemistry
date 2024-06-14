@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Calculating Specific Heat</title>
+
+<style type="text/css">
+
+#content {
+	width:705px;
+}
+
+#equation {
+	width:650px;
+	padding:20px;
+	background-color: #FCC;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	margin:5px;
+	font-size:24px;
+	text-align:center;
+		
+}
+
+#example {
+	width:630px;
+	height:auto;
+	background-color:#09FBCC;
+	padding:30px;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	margin:5px;
+	float:left;
+}
+
+#formula {
+	width:300px;
+	float:left;
+}
+
+
+
+#problem1 {
+	width:300px;
+	height:230px;
+	background-color: #0CF;
+	padding:20px;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	float:left;
+	margin:5px;
+	
+}
+
+#problem2 {
+	width:300px;
+	height:230px;
+	background-color:#CC9;
+	padding:20px;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	float:left;
+	margin:5px;
+	
+}
+
+#problem3 {
+	width:300px;
+	height:230px;
+	background-color: #FC9;
+	padding:20px;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	float:left;
+	margin:5px;
+	
+}
+
+#problem4 {
+	width:300px;
+	height:230px;
+	background-color: #999;
+	padding:20px;
+	border-radius:20px;
+	-webkit-border-radius:20px;
+	float:left;
+	margin:5px;
+	
+}
+
+#demo1 {
+	width:200px; 
+	height:20px; 
+	font-weight:bold; 
+	color: #009; 
+	background-color:#FFF; 
+	padding:3px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	text-align:center; 
+}
+
+#mass {
+	width:auto;
+	height:20px;
+	color:#F00;
+	font-weight:bold;
+	background-color:#FFF; 
+	padding:5px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	text-align:center;
+}
+
+#temperature {
+	width:auto;
+	height:20px;
+	color: #060;
+	font-weight:bold;
+	background-color:#FFF; 
+	padding:5px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	text-align:center;
+}
+
+#specific_heat {
+	width:auto;
+	height:20px;
+	color: #600;
+	font-weight:bold;
+	background-color:#FFF; 
+	padding:5px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	text-align:center;
+}
+
+#solved {
+	width:auto;
+	height:20px;
+	color: #00F;
+	font-weight:bold;
+	background-color:#FFF; 
+	padding:5px;
+	border-radius:15px;
+	-webkit-border-radius:15px;
+	text-align:center;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="content">
+
+<div id="equation">Heat Energy = (Specific Heat)  x  (Mass)  x  (ΔT)</div>
+
+
+<div id="example">
+
+<span id="formula" style="border-right:thin solid #063; width:200px; padding-right:25px;">
+<b>Use the formula</b> 
+<p>Heat Energy = <b>SH</b> x <b>m</b> x <b>ΔT</b></p>
+<p><b>SH</b> = Specific Heat</p>
+<p><b>m</b> = Mass</p>
+<p><b>ΔT</b> = Change in Temperature</p>
+</span>
+
+
+<span id="formula" style="margin-left:50px; width:350px;"><b>Given:</b>
+<p> the Mass of water m = 6g,<br />
+<br />	
+Specific heat of water is SH = 4.184 J/g&middot;&deg;C,<br />
+<br />
+Temperature difference ΔT = 90&deg;C - 30&deg;C = 60&deg;C<br />
+<br />
+Calculate the Heat Energy <button onclick="myFunction()">Try it</button>
+</p>
+</span>
+
+<br />
+<br />
+<br />
+
+<span style="float:left;">
+<p id="demo1"></p>
+
+<script>
+function myFunction()
+{
+var ΔT=60;
+var SH=4.184;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("demo1")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+</span>
+
+
+</div>
+
+
+
+
+<!--Change In Mass-->
+<div id="problem1">
+
+<p><b>Change in Mass</b></p>
+<p><b>Example 1:</b> Click the buttons below to see how Heat Energy is affected by the change in mass.<br /> 
+<br />(4.184 J/g&middot;&deg;C) x <span style="font-weight:bold;">(Mass)</span> x 60&deg;C =</p>
+
+
+<span style=" margin-left:auto; margin-right:auto;"><button onclick="myFunction1()">12g</button><button onclick="myFunction2()">24g</button><button onclick="myFunction3()">48g</button><button onclick="myFunction4()">96g</button></span>
+
+<p id="mass"></p>
+
+<script>
+function myFunction1()
+{
+var ΔT=60;
+var SH=4.184;
+var m=12;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("mass")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction2()
+{
+var ΔT=60;
+var SH=4.184;
+var m=24;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("mass")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction3()
+{
+var ΔT=60;
+var SH=4.184;
+var m=48;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("mass")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction4()
+{
+var ΔT=60;
+var SH=4.184;
+var m=96;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("mass")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+</div>
+
+
+<!--Change In Temperature-->
+<div id="problem2">
+
+<p><b>Change in Temperature</b></p>
+<p><b>Example 2:</b> Click the buttons below to see how Heat Energy is affected by the change in temperature.<br /> 
+<br />(4.184 J/g&middot;&deg;C) x (6g) x <span style="font-weight:bold;">(ΔT)</span> =
+<br />
+<br />
+<span style=" margin-left:auto; margin-right:auto;"><button onclick="myFunction5()">25&deg;C</button><button onclick="myFunction6()">50&deg;C</button><button onclick="myFunction7()">75&deg;C</button><button onclick="myFunction8()">100&deg;C</button></span></p>
+
+<p id="temperature"></p>
+
+<script>
+function myFunction5()
+{
+var ΔT=25;
+var SH=4.184;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("temperature")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction6()
+{
+var ΔT=50;
+var SH=4.184;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("temperature")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction7()
+{
+var ΔT=75;
+var SH=4.184;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("temperature")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction8()
+{
+var ΔT=100;
+var SH=4.184;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("temperature")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+</div>
+
+<!--Change In Specific Heat-->
+<div id="problem3">
+
+<p><b>Change in Specific Heat</b></p>
+<p><b>Example 3:</b> Click the buttons below to see how Heat Energy is affected by the change in Specific heat.<br /> 
+<br /><span style="font-weight:bold;">(Specific Heat)</span> x (6g) x (60&deg;C) =</p>
+
+<span style=" margin-left:auto; margin-right:auto;">
+<button onclick="myFunction9()">3.58 J/g&middot;&deg;C</button><button onclick="myFunction10()">0.385 J/g&middot;&deg;C</button><button onclick="myFunction11()">0.129 J/g&middot;&deg;C</button></span>
+
+<p id="specific_heat"></p>
+
+<script>
+function myFunction9()
+{
+var ΔT=60;
+var SH=3.58;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("specific_heat")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction10()
+{
+var ΔT=60;
+var SH=0.385;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("specific_heat")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+<script>
+function myFunction11()
+{
+var ΔT=60;
+var SH=0.129;
+var m=6;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("specific_heat")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+</div>
+
+
+<!--Change In Specific Heat-->
+<div id="problem4">
+
+<p><b>Solved Example</b></p>
+<p><b>Question:</b> Calculate the heat required to raise 12g of iron from 25&deg;C to 75&deg;C? The specific Heat of iron = 0.450 J/g&middot;&deg;C<br />
+<br /><b>(0.450 J/g&middot;&deg;C)</b> x <b>(12g)</b> x <b>(50&deg;C)</b> =</p>
+
+
+<button onclick="myFunction12()">Calculate</button>
+
+<p id="solved"></p>
+
+<script>
+function myFunction12()
+{
+var ΔT=50;
+var SH=0.45;
+var m=12;
+var x=SH*m*ΔT;
+var demoP=document.getElementById("solved")
+demoP.innerHTML="Heat Energy = " + x + " J ";
+}
+</script>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
