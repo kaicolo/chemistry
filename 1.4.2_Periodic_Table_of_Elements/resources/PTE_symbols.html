@@ -1,0 +1,1364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Periodic Table of Elements</title>
+
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+      href="../css/overlay-basic.css"/>
+
+<link rel="stylesheet" type="text/css" href="../css/table_layout.css"/>
+
+<link rel="stylesheet" type="text/css" href="../css/zintl.css"/>
+
+<script type="text/javascript" src="../javascript/zintl_line.js"></script>
+
+
+
+</head>
+
+<body>
+
+<div id="container">
+
+<div id="title">
+  <span>The Periodical Table of Elements</span>
+</div>
+
+
+<div id="shells">
+<div id="shellCell"><div class="shellNo">1</div></div>
+<div id="shellCell"><div class="shellNo">2</div></div>
+<div id="shellCell"><div class="shellNo">3</div></div>
+<div id="shellCell"><div class="shellNo">4</div></div>
+<div id="shellCell"><div class="shellNo">5</div></div>
+<div id="shellCell"><div class="shellNo">6</div></div>
+<div id="shellCell"><div class="shellNo">7</div></div>
+</div>
+
+<div style="position:absolute; left:671px; top:210px; z-index:0;">
+<div id="amphoteric">
+
+<div class="border borderv" id="step1"></div>
+<div class="border borderh" id="step2"></div>
+<div class="border borderv" id="step3"></div>
+<div class="border borderh" id="step4"></div>
+<div class="border borderv" id="step5"></div>
+<div class="border borderh" id="step6"></div>
+<div class="border borderv" id="step7"></div>
+<div class="border borderh" id="step8"></div>
+<div class="border borderh" id="step9"></div>
+<div class="border borderv" id="step10"></div>
+<div class="border borderh" id="step11"></div>
+
+</div>
+
+<div id="buttonShow" class="arrow">
+<span style="width:70px; height:70px; border-radius:70px; -moz-border-radius:70px; border:solid 1px #FFFFFF; padding:9px 2px 9px 2px;">show</span>
+<span id="right"></span>
+<span id="down"></span> 
+</div>
+  
+<script>
+$('#buttonShow').click(function() {
+    $(this).fadeOut(250);
+});
+</script>
+
+
+<div id="buttonHide" class="arrow">
+<span style="width:70px; height:70px; border-radius:70px; -moz-border-radius:70px; border:solid 1px #FFFFFF; padding:9px 5px 9px 5px;">hide</span>
+<span id="left"></span>
+<span id="up"></span> 
+</div>
+
+<script>
+$('#buttonHide').click(function() {
+    $(this).fadeOut(250);
+});
+</script>
+
+
+</div>
+  
+
+
+
+<div id="S_block"  
+        onmouseover="document.getElementById('sBlock2').style.display = 'block';"
+        onmouseout="document.getElementById('sBlock2').style.display = 'none';">s block</div>
+        
+<div id="sBlock2">
+<div id="groupName"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element1">H</span></div>
+<div id="triggers" class="tileS" style="position: absolute; left: 850px; top: 100px; z-index: 100;"><span class="symbolS" rel="#element1">He</span></div>
+<div class="cell"></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element3">Li</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element4">Be</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element11">Na</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element12">Mg</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element19">K</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element20">Ca</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element37">Rb</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element38">Sr</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element55">Cs</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element56">Ba</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element87">Fr</span></div>
+<div id="triggers" class="tileS"><span class="symbolS" rel="#element88">Ra</span></div>
+</div>        
+
+<div id="sBlock">
+<div id="groupName">Main groups</div>
+<div class="cell">1A<sup>a</sup><br />1</div>
+<div class="cell"></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element1">H</span></div>
+<div class="cell">2A<br />2</div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element3">Li</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element4">Be</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element11">Na</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element12">Mg</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element19">K</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element20">Ca</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element37">Rb</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element38">Sr</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element55">Cs</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element56">Ba</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element87">Fr</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element88">Ra</span></div>
+</div>
+
+<!-- S BLOCK overlays -->
+<div class="simple_overlay" id="element1">
+  <div class="name">hydrogen</div>
+  <div class="number">1</div>
+  <div class="symbol">H</div>
+  <div class="mass">1.0079</div>
+</div>
+
+<div class="simple_overlay" id="element2">
+  <div class="name">helium</div>
+  <div class="number">2</div>
+  <div class="symbol">He</div>
+  <div class="mass">4.0026</div>
+</div>
+
+<div class="simple_overlay" id="element3">
+  <div class="name">lithium</div>
+  <div class="number">3</div>
+  <div class="symbol">Li</div>
+  <div class="mass">6.941</div>
+</div>
+
+<div class="simple_overlay" id="element4">
+  <div class="name">beryllium</div>
+  <div class="number">4</div>
+  <div class="symbol">Be</div>
+  <div class="mass">9.0122</div>
+</div>
+
+<div class="simple_overlay" id="element11">
+  <div class="name">sodium</div>
+  <div class="number">11</div>
+  <div class="symbol">Na</div>
+  <div class="mass">22.990</div>
+</div>
+
+<div class="simple_overlay" id="element12">
+  <div class="name">magnesium</div>
+  <div class="number">12</div>
+  <div class="symbol">Mg</div>
+  <div class="mass">24.305</div>
+</div>
+
+<div class="simple_overlay" id="element19">
+  <div class="name">potassium</div>
+  <div class="number">19</div>
+  <div class="symbol">K</div>
+  <div class="mass">39.098</div>
+</div>
+
+<div class="simple_overlay" id="element20">
+  <div class="name">calcium</div>
+  <div class="number">20</div>
+  <div class="symbol">Ca</div>
+  <div class="mass">9.0122</div>
+</div>
+
+<div class="simple_overlay" id="element37">
+  <div class="name">rubidium</div>
+  <div class="number">37</div>
+  <div class="symbol">Rb</div>
+  <div class="mass">85.468</div>
+</div>
+
+<div class="simple_overlay" id="element38">
+  <div class="name">strontium</div>
+  <div class="number">38</div>
+  <div class="symbol">Sr</div>
+  <div class="mass">87.62</div>
+</div>
+
+<div class="simple_overlay" id="element55">
+  <div class="name">caesium</div>
+  <div class="number">55</div>
+  <div class="symbol">Cs</div>
+  <div class="mass">132.91</div>
+</div>
+
+<div class="simple_overlay" id="element56">
+  <div class="name">barium</div>
+  <div class="number">56</div>
+  <div class="symbol">Ba</div>
+  <div class="mass">137.33</div>
+</div>
+
+<div class="simple_overlay" id="element87">
+  <div class="name">francium</div>
+  <div class="number">87</div>
+  <div class="symbol">Fr</div>
+  <div class="mass">[223]</div>
+</div>
+
+<div class="simple_overlay" id="element88">
+  <div class="name">radium</div>
+  <div class="number">88</div>
+  <div class="symbol">Ra</div>
+  <div class="mass">[226]</div>
+</div>
+
+
+<div id="D_block"  
+        onmouseover="document.getElementById('dBlock2').style.display = 'block';"
+        onmouseout="document.getElementById('dBlock2').style.display = 'none';">d block</div>
+        
+<div id="dBlock2">
+<div id="groupName"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element21">Sc</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element22">Ti</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element23">V</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element24">Cr</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element25">Mn</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element26">Fe</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element27">Co</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element28">Ni</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element29">Cd</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element30">Zn</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element39">Y</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element40">Zr</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element41">Nb</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element42">Mo</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element43">Tc</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element44">Ru</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element45">Rh</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element46">Pd</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element47">Ag</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element48">Cd</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element71">Lu</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element72">Hf</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element73">Ta</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element74">W</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element75">Re</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element76">OS</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element77">Ir</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element78">Pt</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element79">Au</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element80">Hg</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element103">Lr</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element104">Rf</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element105">Db</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element106">Sg</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element107">Bh</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element108">Hs</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element109">Mt</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element110">Ds</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element111">Rg</span></div>
+<div id="triggers" class="tileD"><span class="symbolD" rel="#element112">Cn</span></div>
+</div>        
+
+<div id="dBlock">
+<div id="groupName">Transition metals</div>
+<div class="cell">3B<br />3</div>
+<div class="cell">4B<br />4</div>
+<div class="cell">5B<br />5</div>
+<div class="cell">6B<br />6</div>
+<div class="cell">7B<br />7</div>
+<div class="cell">  <br />8</div>
+<div class="cell">8B<br />9</div>
+<div class="cell">  <br />10</div>
+<div class="cell">1B<br />11</div>
+<div class="cell">2B<br />12  </div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element21">Sc</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element22">Ti</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element23">V</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element24">Cr</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element25">Mn</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element26">Fe</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element27">Co</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element28">Ni</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element29">Cd</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element30">Zn</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element39">Y</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element40">Zr</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element41">Nb</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element42">Mo</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element43">Tc</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element44">Ru</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element45">Rh</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element46">Pd</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element47">Ag</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element48">Cd</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element71">Lu</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element72">Hf</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element73">Ta</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element74">W</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element75">Re</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element76">Os</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element77">Ir</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element78">Pt</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element79">Au</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element80">Hg</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element103">Lr</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element104">Rf</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element105">Db</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element106">Sg</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element107">Bh</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element108">Hs</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element109">Mt</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element110">Ds</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element111">Rg</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element112">Cn</span></div>
+</div>
+
+<!-- D BLOCK overlays -->
+<div class="simple_overlay" id="element21">
+  <div class="name">scandium</div>
+  <div class="number">21</div>
+  <div class="symbol">Sc</div>
+  <div class="mass">44.956</div>
+</div>
+
+<div class="simple_overlay" id="element22">
+  <div class="name">titanium</div>
+  <div class="number">22</div>
+  <div class="symbol">Ti</div>
+  <div class="mass">47.867</div>
+</div>
+
+<div class="simple_overlay" id="element23">
+  <div class="name">vanadium</div>
+  <div class="number">23</div>
+  <div class="symbol">V</div>
+  <div class="mass">50.942</div>
+</div>
+
+<div class="simple_overlay" id="element24">
+  <div class="name">chromium</div>
+  <div class="number">24</div>
+  <div class="symbol">Cr</div>
+  <div class="mass">51.996</div>
+</div>
+
+<div class="simple_overlay" id="element25">
+  <div class="name">manganese</div>
+  <div class="number">25</div>
+  <div class="symbol">Mn</div>
+  <div class="mass">54.938</div>
+</div>
+
+<div class="simple_overlay" id="element26">
+  <div class="name">iron</div>
+  <div class="number">26</div>
+  <div class="symbol">Fe</div>
+  <div class="mass">55.845</div>
+</div>
+
+<div class="simple_overlay" id="element27">
+  <div class="name">cobalt</div>
+  <div class="number">27</div>
+  <div class="symbol">Co</div>
+  <div class="mass">58.933</div>
+</div>
+
+<div class="simple_overlay" id="element28">
+  <div class="name">nickel</div>
+  <div class="number">28</div>
+  <div class="symbol">Ni</div>
+  <div class="mass">58.693</div>
+</div>
+
+<div class="simple_overlay" id="element29">
+  <div class="name">copper</div>
+  <div class="number">29</div>
+  <div class="symbol">Cu</div>
+  <div class="mass">63.546</div>
+</div>
+
+<div class="simple_overlay" id="element30">
+  <div class="name">zinc</div>
+  <div class="number">30</div>
+  <div class="symbol">Zn</div>
+  <div class="mass">63.39</div>
+</div>
+
+<div class="simple_overlay" id="element39">
+  <div class="name">yttrium</div>
+  <div class="number">39</div>
+  <div class="symbol">Y</div>
+  <div class="mass">88.906</div>
+</div>
+
+<div class="simple_overlay" id="element40">
+  <div class="name">zirconium</div>
+  <div class="number">40</div>
+  <div class="symbol">Zr</div>
+  <div class="mass">91.224</div>
+</div>
+
+<div class="simple_overlay" id="element41">
+  <div class="name">niobium</div>
+  <div class="number">41</div>
+  <div class="symbol">Nb</div>
+  <div class="mass">92.906</div>
+</div>
+
+<div class="simple_overlay" id="element42">
+  <div class="name">molybdenum</div>
+  <div class="number">42</div>
+  <div class="symbol">Mo</div>
+  <div class="mass">95.94</div>
+</div>
+
+<div class="simple_overlay" id="element43">
+  <div class="name">technetium</div>
+  <div class="number">43</div>
+  <div class="symbol">Tc</div>
+  <div class="mass">[98]</div>
+</div>
+
+<div class="simple_overlay" id="element44">
+  <div class="name">ruthenium</div>
+  <div class="number">44</div>
+  <div class="symbol">Ru</div>
+  <div class="mass">101.07</div>
+</div>
+
+<div class="simple_overlay" id="element45">
+  <div class="name">rhodium</div>
+  <div class="number">45</div>
+  <div class="symbol">Rh</div>
+  <div class="mass">102.91</div>
+</div>
+
+<div class="simple_overlay" id="element46">
+  <div class="name">palladium</div>
+  <div class="number">46</div>
+  <div class="symbol">Pd</div>
+  <div class="mass">106.42</div>
+</div>
+
+<div class="simple_overlay" id="element47">
+  <div class="name">silver</div>
+  <div class="number">47</div>
+  <div class="symbol">Ag</div>
+  <div class="mass">107.87</div>
+</div>
+
+<div class="simple_overlay" id="element48">
+  <div class="name">cadmium</div>
+  <div class="number">48</div>
+  <div class="symbol">Cd</div>
+  <div class="mass">112.41</div>
+</div>
+
+<div class="simple_overlay" id="element71">
+  <div class="name">lutetium</div>
+  <div class="number">71</div>
+  <div class="symbol">Lu</div>
+  <div class="mass">174.97</div>
+</div>
+
+<div class="simple_overlay" id="element72">
+  <div class="name">hafnium</div>
+  <div class="number">72</div>
+  <div class="symbol">Hf</div>
+  <div class="mass">178.49</div>
+</div>
+
+<div class="simple_overlay" id="element73">
+  <div class="name">tantalum</div>
+  <div class="number">73</div>
+  <div class="symbol">Ta</div>
+  <div class="mass">180.95</div>
+</div>
+
+<div class="simple_overlay" id="element74">
+  <div class="name">tungsten</div>
+  <div class="number">74</div>
+  <div class="symbol">W</div>
+  <div class="mass">183.84</div>
+</div>
+
+<div class="simple_overlay" id="element75">
+  <div class="name">rhenium</div>
+  <div class="number">75</div>
+  <div class="symbol">Re</div>
+  <div class="mass">186.21</div>
+</div>
+
+<div class="simple_overlay" id="element76">
+  <div class="name">osmium</div>
+  <div class="number">76</div>
+  <div class="symbol">Os</div>
+  <div class="mass">190.23</div>
+</div>
+
+<div class="simple_overlay" id="element77">
+  <div class="name">iridium</div>
+  <div class="number">77</div>
+  <div class="symbol">Ir</div>
+  <div class="mass">192.22</div>
+</div>
+
+<div class="simple_overlay" id="element78">
+  <div class="name">platinum</div>
+  <div class="number">78</div>
+  <div class="symbol">Pt</div>
+  <div class="mass">196.08</div>
+</div>
+
+<div class="simple_overlay" id="element79">
+  <div class="name">gold</div>
+  <div class="number">79</div>
+  <div class="symbol">Au</div>
+  <div class="mass">196.97</div>
+</div>
+
+<div class="simple_overlay" id="element80">
+  <div class="name">mercury</div>
+  <div class="number">80</div>
+  <div class="symbol">Hg</div>
+  <div class="mass">200.59</div>
+</div>
+
+<div class="simple_overlay" id="element103">
+  <div class="name">lawrencium</div>
+  <div class="number">103</div>
+  <div class="symbol">Lr</div>
+  <div class="mass">[262]</div>
+</div>
+
+<div class="simple_overlay" id="element104">
+  <div class="name">rutherfordium</div>
+  <div class="number">104</div>
+  <div class="symbol">Rf</div>
+  <div class="mass">[261]</div>
+</div>
+
+<div class="simple_overlay" id="element105">
+  <div class="name">dubnium</div>
+  <div class="number">105</div>
+  <div class="symbol">Db</div>
+  <div class="mass">[262]</div>
+</div>
+
+<div class="simple_overlay" id="element106">
+  <div class="name">seaborgium</div>
+  <div class="number">106</div>
+  <div class="symbol">Sg</div>
+  <div class="mass">[266]</div>
+</div>
+
+<div class="simple_overlay" id="element107">
+  <div class="name">bohrium</div>
+  <div class="number">107</div>
+  <div class="symbol">Bh</div>
+  <div class="mass">[264]</div>
+</div>
+
+<div class="simple_overlay" id="element108">
+  <div class="name">hassium</div>
+  <div class="number">108</div>
+  <div class="symbol">Hs</div>
+  <div class="mass">[269]</div>
+</div>
+
+<div class="simple_overlay" id="element109">
+  <div class="name">meitnerium</div>
+  <div class="number">109</div>
+  <div class="symbol">Mt</div>
+  <div class="mass">[268]</div>
+</div>
+
+<div class="simple_overlay" id="element110">
+  <div class="name">darmstadtium</div>
+  <div class="number">110</div>
+  <div class="symbol">Ds</div>
+  <div class="mass">[271]</div>
+</div>
+
+<div class="simple_overlay" id="element111">
+  <div class="name">roentgenium</div>
+  <div class="number">111</div>
+  <div class="symbol">Rg</div>
+  <div class="mass">[272]</div>
+</div>
+
+<div class="simple_overlay" id="element112">
+  <div class="name">copernicium</div>
+  <div class="number">112</div>
+  <div class="symbol">Cn</div>
+  <div class="mass">[277]</div>
+</div>
+
+
+<div id="P_block"  
+        onmouseover="document.getElementById('pBlock2').style.display = 'block';"
+        onmouseout="document.getElementById('pBlock2').style.display = 'none';">p block</div>
+        
+<div id="pBlock2">
+<div id="groupName"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element5">B</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element6">C</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element7">N</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element8">O</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element9">F</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element10">Ne</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element13">Al</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element14">Si</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element15">P</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element16">S</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element17">Cl</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element18">Ar</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element31">Ga</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element32">Ge</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element33">As</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element34">Se</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element35">Br</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element36">Kr</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element49">In</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element50">Sn</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element51">Sb</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element52">Te</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element53">I</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element54">Xe</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element81">Tl</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element82">Pb</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element83">Bi</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element84">Po</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element85">At</span></div>
+<div id="triggers" class="tilePd"><span class="symbolP" rel="#element86">Rn</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element113" style="font-size:20px; color:#CCC;">Uut</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element114">Fl</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element115" style="font-size:20px; color:#CCC;">Uup</span></div>
+<div id="triggers" class="tilePl"><span class="symbolP" rel="#element116">Lv</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element117" style="font-size:20px; color:#CCC;">Uus</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element118" style="font-size:20px; color:#CCC;">Uuo</span></div>
+</div>          
+
+<div id="pBlock">
+<div id="groupName">Main groups</div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell">8A<br />18</div>
+<div class="cell">3A<br />13</div>
+<div class="cell">4A<br />14</div>
+<div class="cell">5A<br />15</div>
+<div class="cell">6A<br />16</div>
+<div class="cell">7A<br />17</div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element2">He</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element5">B</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element6">C</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element7">N</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element8">O</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element9">F</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element10">Ne</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element13">Al</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element14">Si</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element15">P</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element16">S</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element17">Cl</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element18">Ar</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element31">Ga</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element32">Ge</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element33">As</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element34">Se</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element35">Br</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element36">Kr</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element49">In</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element50">Sn</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element51">Sb</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element52">Te</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element53">I</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element54">Xe</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element81">Tl</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element82">Pb</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element83">Bi</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element84">Po</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element85">At</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element86">Rn</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element113" style="font-size:20px; color:#CCC;">Uut</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element114">Fl</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element115" style="font-size:20px; color:#CCC;">Uup</span></div>
+<div id="triggers" class="tile"><span class="symbol" rel="#element116">Lv</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element117" style="font-size:20px; color:#CCC;">Uus</span></div>
+<div id="triggers" class="tile" style="opacity:0.20; filter:alpha(opacity=20);"><span class="symbol" rel="#element118" style="font-size:20px; color:#CCC;">Uuo</span></div>
+</div>
+
+<!-- P BLOCK overlays -->
+<div class="simple_overlay" id="element5">
+  <div class="name">boron</div>
+  <div class="number">5</div>
+  <div class="symbol">B</div>
+  <div class="mass">10.811</div>
+</div>
+
+<div class="simple_overlay" id="element6">
+  <div class="name">carbon</div>
+  <div class="number">6</div>
+  <div class="symbol">C</div>
+  <div class="mass">12.011</div>
+</div>
+
+<div class="simple_overlay" id="element7">
+  <div class="name">nitrogen</div>
+  <div class="number">7</div>
+  <div class="symbol">N</div>
+  <div class="mass">14.007</div>
+</div>
+
+<div class="simple_overlay" id="element8">
+  <div class="name">oxygen</div>
+  <div class="number">8</div>
+  <div class="symbol">O</div>
+  <div class="mass">15.999</div>
+</div>
+
+<div class="simple_overlay" id="element9">
+  <div class="name">fluorine</div>
+  <div class="number">9</div>
+  <div class="symbol">F</div>
+  <div class="mass">18.998</div>
+</div>
+
+<div class="simple_overlay" id="element10">
+  <div class="name">neon</div>
+  <div class="number">10</div>
+  <div class="symbol">Ne</div>
+  <div class="mass">20.180</div>
+</div>
+
+<div class="simple_overlay" id="element13">
+  <div class="name">aluminum</div>
+  <div class="number">13</div>
+  <div class="symbol">Al</div>
+  <div class="mass">26.982</div>
+</div>
+
+<div class="simple_overlay" id="element14">
+  <div class="name">silicon</div>
+  <div class="number">14</div>
+  <div class="symbol">Si</div>
+  <div class="mass">28.086</div>
+</div>
+
+<div class="simple_overlay" id="element15">
+  <div class="name">phosphorus</div>
+  <div class="number">15</div>
+  <div class="symbol">P</div>
+  <div class="mass">30.947</div>
+</div>
+
+<div class="simple_overlay" id="element16">
+  <div class="name">sulfer</div>
+  <div class="number">16</div>
+  <div class="symbol">S</div>
+  <div class="mass">32.065</div>
+</div>
+
+<div class="simple_overlay" id="element17">
+  <div class="name">chlorine</div>
+  <div class="number">17</div>
+  <div class="symbol">Cl</div>
+  <div class="mass">35.453</div>
+</div>
+
+<div class="simple_overlay" id="element18">
+  <div class="name">argon</div>
+  <div class="number">18</div>
+  <div class="symbol">Ar</div>
+  <div class="mass">39.948</div>
+</div>
+
+<div class="simple_overlay" id="element31">
+  <div class="name">gallium</div>
+  <div class="number">31</div>
+  <div class="symbol">Ga</div>
+  <div class="mass">69.723</div>
+</div>
+
+<div class="simple_overlay" id="element32">
+  <div class="name">germanium</div>
+  <div class="number">32</div>
+  <div class="symbol">Ge</div>
+  <div class="mass">72.61</div>
+</div>
+
+<div class="simple_overlay" id="element33">
+  <div class="name">arsenic</div>
+  <div class="number">33</div>
+  <div class="symbol">As</div>
+  <div class="mass">74.922</div>
+</div>
+
+<div class="simple_overlay" id="element34">
+  <div class="name">selenium</div>
+  <div class="number">34</div>
+  <div class="symbol">Se</div>
+  <div class="mass">78.96</div>
+</div>
+
+<div class="simple_overlay" id="element35">
+  <div class="name">bromine</div>
+  <div class="number">35</div>
+  <div class="symbol">Br</div>
+  <div class="mass">79.904</div>
+</div>
+
+<div class="simple_overlay" id="element36">
+  <div class="name">krypton</div>
+  <div class="number">36</div>
+  <div class="symbol">Kr</div>
+  <div class="mass">83.80</div>
+</div>
+
+<div class="simple_overlay" id="element49">
+  <div class="name">indium</div>
+  <div class="number">49</div>
+  <div class="symbol">In</div>
+  <div class="mass">114.82</div>
+</div>
+
+<div class="simple_overlay" id="element50">
+  <div class="name">tin</div>
+  <div class="number">50</div>
+  <div class="symbol">Sn</div>
+  <div class="mass">118.71</div>
+</div>
+
+<div class="simple_overlay" id="element51">
+  <div class="name">antimony</div>
+  <div class="number">51</div>
+  <div class="symbol">Sb</div>
+  <div class="mass">121.76</div>
+</div>
+
+<div class="simple_overlay" id="element52">
+  <div class="name">tellurium</div>
+  <div class="number">52</div>
+  <div class="symbol">Te</div>
+  <div class="mass">127.60</div>
+</div>
+
+<div class="simple_overlay" id="element53">
+  <div class="name">iodine</div>
+  <div class="number">53</div>
+  <div class="symbol">I</div>
+  <div class="mass">126.90</div>
+</div>
+
+<div class="simple_overlay" id="element54">
+  <div class="name">xenon</div>
+  <div class="number">54</div>
+  <div class="symbol">Xe</div>
+  <div class="mass">131.29</div>
+</div>
+
+<div class="simple_overlay" id="element81">
+  <div class="name">thallium</div>
+  <div class="number">81</div>
+  <div class="symbol">Tl</div>
+  <div class="mass">204.38</div>
+</div>
+
+<div class="simple_overlay" id="element82">
+  <div class="name">lead</div>
+  <div class="number">82</div>
+  <div class="symbol">Pb</div>
+  <div class="mass">207.2</div>
+</div>
+
+<div class="simple_overlay" id="element83">
+  <div class="name">bismuth</div>
+  <div class="number">83</div>
+  <div class="symbol">Bi</div>
+  <div class="mass">208.98</div>
+</div>
+
+<div class="simple_overlay" id="element84">
+  <div class="name">polonium</div>
+  <div class="number">84</div>
+  <div class="symbol">Po</div>
+  <div class="mass">[209]</div>
+</div>
+
+<div class="simple_overlay" id="element85">
+  <div class="name">astatine</div>
+  <div class="number">85</div>
+  <div class="symbol">At</div>
+  <div class="mass">[210]</div>
+</div>
+
+<div class="simple_overlay" id="element86">
+  <div class="name">radon</div>
+  <div class="number">86</div>
+  <div class="symbol">Rn</div>
+  <div class="mass">[222]</div>
+</div>
+
+<div class="simple_overlay" id="element113">
+  <div class="name">ununtrium</div>
+  <div class="number">113</div>
+  <div class="symbol">Uut</div>
+  <div class="mass">[286]</div>
+</div>
+
+<div class="simple_overlay" id="element114">
+  <div class="name">flerovium</div>
+  <div class="number">114</div>
+  <div class="symbol">Fl</div>
+  <div class="mass">[289]</div>
+</div>
+
+<div class="simple_overlay" id="element115">
+  <div class="name">ununpentium</div>
+  <div class="number">115</div>
+  <div class="symbol">Uup</div>
+  <div class="mass">[288]</div>
+</div>
+
+<div class="simple_overlay" id="element116">
+  <div class="name">livermorium</div>
+  <div class="number">116</div>
+  <div class="symbol">Lv</div>
+  <div class="mass">[293]</div>
+</div>
+
+<div class="simple_overlay" id="element117">
+  <div class="name">ununseptium</div>
+  <div class="number">117</div>
+  <div class="symbol">Uus</div>
+  <div class="mass">[294]</div>
+</div>
+
+<div class="simple_overlay" id="element118">
+  <div class="name">ununoctium</div>
+  <div class="number">118</div>
+  <div class="symbol">Uuo</div>
+  <div class="mass">[294]</div>
+</div>
+
+
+
+				<!-- F BLOCK -->
+                
+ <div id="lanthanide_icon" onmouseover="document.getElementById('Lanthanide_highlight').style.display = 'block';"
+        onmouseout="document.getElementById('Lanthanide_highlight').style.display = 'none';">✱</div>
+                
+<div id="Lanthanide_highlight">
+<div style="width:auto; height:150px;"></div>
+<div class="cell"></div>
+	<div id="triggers" class="tileF"><span class="symbolF" rel="#element57">La</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element58">Ce</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element59">Pr</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element60">Nd</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element61">Pm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element62">Sm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element63">Eu</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element64">Gd</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element65">Tb</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element66">Dy</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element67">Ho</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element68">Er</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element69">Tm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element70">Yb</span></div>
+  </div>
+  </div>
+
+ 
+ <div id="actinide_icon" onmouseover="document.getElementById('Actinide_highlight').style.display = 'block';"
+        onmouseout="document.getElementById('Actinide_highlight').style.display = 'none';"><b>✝</b></div>
+
+<div id="Actinide_highlight">
+<div style="width:auto; height:150px;"></div>
+<div class="cell"></div>
+	<div id="triggers" class="tileF"><span class="symbolF" rel="#element89">Ac</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element90">Th</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element91">Pa</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element92">U</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element93">Np</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element94">Pu</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element95">Am</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element96">Cm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element97">Bk</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element98">Cf</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element99">Es</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element100">Fm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element101">Md</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element102">No</span></div>
+  </div>
+  </div>
+                          
+                
+<div id="F_block"  
+        onmouseover="document.getElementById('fBlock2').style.display = 'block';"
+        onmouseout="document.getElementById('fBlock2').style.display = 'none';">f block</div>
+        
+
+<div id="fBlock2">
+  <div class="lanthanides"></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element57">La</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element58">Ce</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element59">Pr</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element60">Nd</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element61">Pm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element62">Sm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element63">Eu</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element64">Gd</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element65">Tb</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element66">Dy</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element67">Ho</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element68">Er</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element69">Tm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element70">Yb</span></div>
+  
+  <div class="lanthanides"></div>
+    <div id="triggers" class="tileF"><span class="symbolF" rel="#element89">Ac</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element90">Th</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element91">Pa</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element92">U</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element93">Np</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element94">Pu</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element95">Am</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element96">Cm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element97">Bk</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element98">Cf</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element99">Es</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element100">Fm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element101">Md</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element102">No</span></div>
+</div>
+
+
+<div id="fBlock2A">
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element57">La</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element58">Ce</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element59">Pr</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element60">Nd</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element61">Pm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element62">Sm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element63">Eu</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element64">Gd</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element65">Tb</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element66">Dy</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element67">Ho</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element68">Er</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element69">Tm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element70">Yb</span></div>
+  </div>
+  
+
+<div id="fBlock2B">
+   <div id="triggers" class="tileF"><span class="symbolF" rel="#element89">Ac</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element90">Th</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element91">Pa</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element92">U</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element93">Np</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element94">Pu</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element95">Am</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element96">Cm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element97">Bk</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element98">Cf</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element99">Es</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element100">Fm</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element101">Md</span></div>
+  <div id="triggers" class="tileF"><span class="symbolF" rel="#element102">No</span></div>
+</div>
+
+
+<div id="Lanthanide"  
+        onmouseover="document.getElementById('fBlock2A').style.display = 'block';"
+        onmouseout="document.getElementById('fBlock2A').style.display = 'none';">✱ Lanthanide series</div>
+        
+<div id="Actinide"  
+        onmouseover="document.getElementById('fBlock2B').style.display = 'block';"
+        onmouseout="document.getElementById('fBlock2B').style.display = 'none';"><b>✝</b> Actinide series</div>       
+
+<div id="fBlock"> 
+  <div id="triggers" class="tile"><span class="symbol" rel="#element57">La</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element58">Ce</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element59">Pr</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element60">Nd</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element61">Pm</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element62">Sm</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element63">Eu</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element64">Gd</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element65">Tb</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element66">Dy</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element67">Ho</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element68">Er</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element69">Tm</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element70">Yb</span></div>
+  
+  <div id="triggers" class="tile"><span class="symbol" rel="#element89">Ac</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element90">Th</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element91">Pa</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element92">U</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element93">Np</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element94">Pu</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element95">Am</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element96">Cm</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element97">Bk</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element98">Cf</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element99">Es</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element100">Fm</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element101">Md</span></div>
+  <div id="triggers" class="tile"><span class="symbol" rel="#element102">No</span></div>
+</div>
+
+
+<!-- F BLOCK overlays -->
+<div class="simple_overlay" id="element57">
+  <div class="name">lathanum</div>
+  <div class="number">57</div>
+  <div class="symbol">La</div>
+  <div class="mass">138.91</div>
+</div>
+
+<div class="simple_overlay" id="element58">
+  <div class="name">cerium</div>
+  <div class="number">58</div>
+  <div class="symbol">Ce</div>
+  <div class="mass">140.12</div>
+</div>
+
+<div class="simple_overlay" id="element59">
+  <div class="name">praseodymium</div>
+  <div class="number">59</div>
+  <div class="symbol">Pr</div>
+  <div class="mass">140.91</div>
+</div>
+
+<div class="simple_overlay" id="element60">
+  <div class="name">neodymium</div>
+  <div class="number">60</div>
+  <div class="symbol">Nd</div>
+  <div class="mass">144.24</div>
+</div>
+
+<div class="simple_overlay" id="element61">
+  <div class="name">promethium</div>
+  <div class="number">61</div>
+  <div class="symbol">Pm</div>
+  <div class="mass">[145]</div>
+</div>
+
+<div class="simple_overlay" id="element62">
+  <div class="name">samarium</div>
+  <div class="number">62</div>
+  <div class="symbol">Sm</div>
+  <div class="mass">150.36</div>
+</div>
+
+<div class="simple_overlay" id="element63">
+  <div class="name">euporium</div>
+  <div class="number">63</div>
+  <div class="symbol">Eu</div>
+  <div class="mass">151.96</div>
+</div>
+
+<div class="simple_overlay" id="element64">
+  <div class="name">gadolinium</div>
+  <div class="number">64</div>
+  <div class="symbol">Gd</div>
+  <div class="mass">157.25</div>
+</div>
+
+<div class="simple_overlay" id="element65">
+  <div class="name">terbium</div>
+  <div class="number">65</div>
+  <div class="symbol">Tb</div>
+  <div class="mass">158.93</div>
+</div>
+
+<div class="simple_overlay" id="element66">
+  <div class="name">dysprosium</div>
+  <div class="number">66</div>
+  <div class="symbol">Dy</div>
+  <div class="mass">162.50</div>
+</div>
+
+<div class="simple_overlay" id="element67">
+  <div class="name">holmium</div>
+  <div class="number">67</div>
+  <div class="symbol">Ho</div>
+  <div class="mass">164.93</div>
+</div>
+
+<div class="simple_overlay" id="element68">
+  <div class="name">erbium</div>
+  <div class="number">68</div>
+  <div class="symbol">Er</div>
+  <div class="mass">167.26</div>
+</div>
+
+<div class="simple_overlay" id="element69">
+  <div class="name">thulium</div>
+  <div class="number">69</div>
+  <div class="symbol">Tm</div>
+  <div class="mass">168.93</div>
+</div>
+
+<div class="simple_overlay" id="element70">
+  <div class="name">ytterbium</div>
+  <div class="number">70</div>
+  <div class="symbol">Yb</div>
+  <div class="mass">173.04</div>
+</div>
+
+<div class="simple_overlay" id="element89">
+  <div class="name">actinium</div>
+  <div class="number">89</div>
+  <div class="symbol">Ac</div>
+  <div class="mass">[227]</div>
+</div>
+
+<div class="simple_overlay" id="element90">
+  <div class="name">thorium</div>
+  <div class="number">90</div>
+  <div class="symbol">Th</div>
+  <div class="mass">232.04</div>
+</div>
+
+<div class="simple_overlay" id="element91">
+  <div class="name">protactinium</div>
+  <div class="number">91</div>
+  <div class="symbol">Pa</div>
+  <div class="mass">231.04</div>
+</div>
+
+<div class="simple_overlay" id="element92">
+  <div class="name">uranium</div>
+  <div class="number">92</div>
+  <div class="symbol">U</div>
+  <div class="mass">238.03</div>
+</div>
+
+<div class="simple_overlay" id="element93">
+  <div class="name">neptunium</div>
+  <div class="number">93</div>
+  <div class="symbol">Np</div>
+  <div class="mass">[237]</div>
+</div>
+
+<div class="simple_overlay" id="element94">
+  <div class="name">plutonium</div>
+  <div class="number">94</div>
+  <div class="symbol">Pu</div>
+  <div class="mass">[244]</div>
+</div>
+
+<div class="simple_overlay" id="element95">
+  <div class="name">americium</div>
+  <div class="number">95</div>
+  <div class="symbol">Am</div>
+  <div class="mass">[243]</div>
+</div>
+
+<div class="simple_overlay" id="element96">
+  <div class="name">curium</div>
+  <div class="number">96</div>
+  <div class="symbol">Cm</div>
+  <div class="mass">[247]</div>
+</div>
+
+<div class="simple_overlay" id="element97">
+  <div class="name">berkelium</div>
+  <div class="number">97</div>
+  <div class="symbol">Bk</div>
+  <div class="mass">[247]</div>
+</div>
+
+<div class="simple_overlay" id="element98">
+  <div class="name">californium</div>
+  <div class="number">98</div>
+  <div class="symbol">Cf</div>
+  <div class="mass">[251]</div>
+</div>
+
+<div class="simple_overlay" id="element99">
+  <div class="name">einsteinium</div>
+  <div class="number">99</div>
+  <div class="symbol">Es</div>
+  <div class="mass">[252]</div>
+</div>
+
+<div class="simple_overlay" id="element100">
+  <div class="name">fermium</div>
+  <div class="number">100</div>
+  <div class="symbol">Fm</div>
+  <div class="mass">[257]</div>
+</div>
+
+<div class="simple_overlay" id="element101">
+  <div class="name">mendelevium</div>
+  <div class="number">101</div>
+  <div class="symbol">Md</div>
+  <div class="mass">[258]</div>
+</div>
+
+<div class="simple_overlay" id="element102">
+  <div class="name">nobelium</div>
+  <div class="number">102</div>
+  <div class="symbol">No</div>
+  <div class="mass">[259]</div>
+</div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+      $("span[rel]").overlay();
+    });
+</script>
+
+</body>
+</html>
