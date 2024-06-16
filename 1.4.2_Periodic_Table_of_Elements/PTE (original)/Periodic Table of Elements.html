@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Periodic Table of Elements</title>
+
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+<style type="text/css">
+#content {
+	width:1040px;
+	height:705px;
+	padding:0;
+	overflow:hidden;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+#footer {
+	background-color:#000;
+	width:1024px;
+	height:100px;
+	border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	margin-right:auto;
+	margin-left:auto;
+	text-align:center;
+}
+
+#button_1 {
+	width:80px;
+	height:80px;
+	float:left;
+	margin:10px 50px 0px 200px;;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	font-size: 14px;
+	text-align: center;
+	padding-top:px;
+}
+
+#button_2 {
+	width:80px;
+	height:80px;
+	float:left;
+	margin:10px 50px 0px 50px;;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	font-size: 14px;
+	text-align: center;
+	padding-top:px;
+}
+
+#button_3 {
+	width:80px;
+	height:80px;
+	float:left;
+	margin:10px 50px 0px 50px;;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	font-size: 14px;
+	text-align: center;
+	padding-top:px;
+}
+
+#button_4 {
+	width:80px;
+	height:80px;
+	float:left;
+	margin:10px 50px 0px 50px;;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	font-size: 14px;
+	text-align: center;
+	padding-top:px;
+}
+
+a:link {
+	text-decoration: none;
+	
+}
+a:visited {
+	text-decoration: none;
+	
+}
+a:hover {
+	text-decoration: none;
+	
+}
+a:active {
+	text-decoration: none;
+	
+}
+
+img {border:none;
+}
+
+
+
+
+</style>
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onload="MM_preloadImages('images/symbol_button(over).png','images/radius_button(over).png','images/electron_button(over).png','images/number_button(over).png')">
+
+<div id="content"><script language="javascript">
+<!--
+
+//Drop-down Document Viewer II- © Dynamic Drive (www.dynamicdrive.com)
+//For full source code, 100's more DHTML scripts, and TOS,
+//visit http://www.dynamicdrive.com
+
+//Specify display mode (0 or 1)
+//0 causes document to be displayed in an inline frame, while 1 in a new browser window
+var displaymode=0
+//if displaymode=0, configure inline frame attributes (ie: dimensions, intial document shown
+var iframecode='<iframe id="periodic" src="PTE_symbols.html" style="width:1040px; height:710px; border:none; padding:0px;" scrolling="no"></iframe></iframe>'
+
+/////NO NEED TO EDIT BELOW HERE////////////
+
+if (displaymode==0)
+document.write(iframecode)
+
+function jumpto(inputurl){
+if (document.getElementById&&displaymode==0)
+document.getElementById("periodic").src=inputurl
+else if (document.all&&displaymode==0)
+document.all.external.src=inputurl
+else{
+if (!window.win2||win2.closed)
+win2=window.open(inputurl)
+//else if win2 already exists
+else{
+win2.location=inputurl
+win2.focus()
+}
+}
+}
+//-->
+</script></div>
+<div id="footer">
+<div id="button_1"><a href="javascript:jumpto('PTE_symbols.html')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('symbols','','images/symbol_button(over).png',1)"><img src="images/symbol_button.png" alt="Element Symbols" width="80" height="80" id="symbols" /></a></div>
+
+<div id="button_2"><a href="javascript:jumpto('PTE_numbers(2).html')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('numbers','','images/number_button(over).png',1)"><img src="images/number_button.png" alt="Element Groups" width="80" height="80" id="numbers" /></a></div>
+
+<div id="button_3"><a href="javascript:jumpto('PTE_radius.html')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('radius','','images/radius_button(over).png',1)"><img src="images/radius_button.png" alt="Atomic Radius" width="80" height="80" id="radius" /></a>
+</div>
+
+<div id="button_4"><a href="javascript:jumpto('PTE_electronegativity.html')" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('electron','','images/electron_button(over).png',1)"><img src="images/electron_button.png" alt="Electronegativity" width="80" height="80" id="electron" /></a>
+</div>
+
+
+</div>
+
+</body>
+</html>

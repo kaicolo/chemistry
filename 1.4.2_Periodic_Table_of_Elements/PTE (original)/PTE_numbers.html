@@ -1,0 +1,1402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Periodic Table of Elements</title>
+
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+<link rel="stylesheet" type="text/css"
+      href="css/overlay-basic.css"/>
+
+<style type="text/css">
+#content {
+	background-image:url(images/bckgrdblend2.png);
+	background-repeat:no-repeat;
+	background-color:#000;
+	width:1024px;
+	height:700px;
+	border-top-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-right-radius:5px;
+	-moz-border-radius-topright:5px;	
+}
+
+#alkali_metals {
+	width: 80px;
+	position: absolute;
+	left: 165px;
+	top: 90px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+#alkali_metals:hover {
+	width: 80px;
+	background-color:#FF8525;
+	position: absolute;
+	left: 165px;
+	top: 90px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#1d1103;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #1d1103;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#alkaline_earth {
+	width: 80px;
+	position: absolute;
+	left: 165px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+#alkaline_earth:hover {
+	width: 80px;
+	background-color:#F6935D;
+	position: absolute;
+	left: 165px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #000;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#transitions {
+	width: 80px;
+	position: absolute;
+	left: 265px;
+	top: 90px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+#transitions:hover {
+	width: 80px;
+	background-color:#d3cdb4;
+	position: absolute;
+	left: 265px;
+	top: 90px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#lanthanides {
+	width: 80px;
+	position: absolute;
+	left: 265px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+#lanthanides:hover {
+	width: 80px;
+	background-color:#BF94DB;
+	position: absolute;
+	left: 265px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#306;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #306;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#actinides {
+	width: 80px;
+	position: absolute;
+	left: 365px;
+	top: 90px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+#actinides:hover {
+	width: 80px;
+	background-color:#562184;
+	position: absolute;
+	left: 365px;
+	top: 90px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#ffff;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #ffff;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#metals {
+	width: 80px;
+	position: absolute;
+	left: 365px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+#metals:hover {
+	width: 80px;
+	background-color:#191A22;
+	position: absolute;
+	left: 365px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#ffff;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #ffff;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#metalloids {
+	width: 80px;
+	position: absolute;
+	left: 465px;
+	top: 90px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+#metalloids:hover {
+	width: 80px;
+	background-color: #003DC3;
+	position: absolute;
+	left: 465px;
+	top: 90px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #fff;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#nonmetals {
+	width: 80px;
+	position: absolute;
+	left: 465px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+#nonmetals:hover {
+	width: 80px;
+	background-color: #BBE2C3;
+	position: absolute;
+	left: 465px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#halogens {
+	width: 80px;
+	position: absolute;
+	left: 565px;
+	top: 90px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+#halogens:hover {
+	width: 80px;
+	background-color:#FFEB3E;
+	position: absolute;
+	left: 565px;
+	top: 90px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#noble_gases {
+	width: 80px;
+	position: absolute;
+	left: 565px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+#noble_gases:hover {
+	width: 80px;
+	background-color:#1CE43E;
+	position: absolute;
+	left: 565px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#ALKALI {
+	background-image: url(images/alkali_metals.png);
+	width: 51px;
+	height: 316px;
+	position: absolute;
+	left: 42px;
+	top: 187px;
+	display:none;
+	z-index: 100;
+}
+
+#ALKALINE_EARTH {
+	background-image: url(images/alkaline_earth.png);
+	width: 51px;
+	height: 316px;
+	position: absolute;
+	left: 95px;
+	top: 187px;
+	display:none;
+	z-index: 100;
+}
+
+#TRANSITIONS {
+	background-image:url(images/transition_metals.png);
+	width: 529px;
+	height: 211px;
+	position: absolute;
+	left: 150px;
+	top: 293px;
+	display:none;
+	z-index:100;
+}
+
+#LANTHANIDES {
+	background-image: url(images/lanthanides.png);
+	width: 740px;
+	height: 51px;
+	position: absolute;
+	top: 545px;
+	left: 202px;
+	display:none;
+	z-index: 100;
+}
+
+#ACTINIDES {
+	background-image: url(images/actinides.png);
+	width: 740px;
+	height: 51px;
+	position: absolute;
+	top: 598px;
+	left: 203px;
+	display:none;
+	z-index:100;
+}
+
+#METALS {
+	background-image:url(images/metalsGroup.png);
+	width: 904px;
+	height: 462px;
+	position: absolute;
+	left: 42px;
+	top: 187px;
+	z-index: 5000;
+	display:none;
+}
+
+
+#METALLOIDS {
+	background-image: url(images/metalLoids.png);
+	width: 217px;
+	height: 266px;
+	position: absolute;
+	left: 679px;
+	top: 183px;
+	display:none;
+	z-index: 100;
+}
+
+#NONMETALS {
+	background-image:url(images/nonmetals.png);
+	width: 956px;
+	height: 316px;
+	position: absolute;
+	left: 43px;
+	top: 133px;
+	z-index: 100;
+	display:none;
+}
+
+#HALOGENS {
+	background-image:url(images/halogens.png);
+	width: 51px;
+	height: 263px;
+	position: absolute;
+	left: 894px;
+	top: 186px;
+	display:none;
+	z-index:100;
+}
+
+#NOBLE_GASES {
+	background-image:url(images/noble_gases.png);
+	width: 51px;
+	height: 316px;
+	position: absolute;
+	left: 947px;
+	top: 133px;
+	display:none;
+	z-index:100;
+}
+
+
+#sblock {
+	width: 106px;
+	height: 371px;
+	position: absolute;
+	left: 41px;
+	top: 134px;
+}
+
+
+#dblock {
+	width: 530px;
+	height: 212px;
+	position: absolute;
+	left: 149px;
+	top: 293px;
+}
+
+
+#pblock {
+	width: 318px;
+	height: 371px;
+	position: absolute;
+	left: 681px;
+	top: 133px;
+}
+
+
+#fblock {
+	width: 742px;
+	height: 106px;
+	position: absolute;
+	left: 202px;
+	top: 545px;
+}
+
+
+#lanthanide_series {
+	background-image: url(images/lanthanide_series.png);
+	width: 795px;
+	height: 197px;
+	position: absolute;
+	top: 398px;
+	left: 148px;
+	display:none;
+}
+
+#actinide_series {
+	background-image: url(images/actinide_series.png);
+	width: 796px;
+	height: 198px;
+	position: absolute;
+	top: 451px;
+	left: 146px;
+	display:none;
+}
+
+
+.button {
+	width:53px;
+	height:53px;
+	float:left;
+	text-align:center;
+}
+
+
+
+  /* some styling for triggers */
+  #triggers {
+  text-align:center;
+  }
+  
+    #triggers img {
+  cursor:pointer;
+  }
+  
+</style>
+
+</head>
+
+<body>
+
+<div id="content">
+
+<div id="alkali_metals"  
+        onmouseover="document.getElementById('ALKALI').style.display = 'block';"
+        onmouseout="document.getElementById('ALKALI').style.display = 'none';">Alkali metals</div>
+        
+<div id="alkaline_earth"  
+        onmouseover="document.getElementById('ALKALINE_EARTH').style.display = 'block';"
+        onmouseout="document.getElementById('ALKALINE_EARTH').style.display = 'none';">Alkaline earth</div>        
+        
+<div id="transitions"  
+        onmouseover="document.getElementById('TRANSITIONS').style.display = 'block';"
+        onmouseout="document.getElementById('TRANSITIONS').style.display = 'none';">Transition</div>
+        
+
+<div id="lanthanides"  
+        onmouseover="document.getElementById('LANTHANIDES').style.display = 'block';"
+        onmouseout="document.getElementById('LANTHANIDES').style.display = 'none';">Lanthanides</div>
+
+<div id="actinides"  
+        onmouseover="document.getElementById('ACTINIDES').style.display = 'block';"
+        onmouseout="document.getElementById('ACTINIDES').style.display = 'none';">Actinides</div>
+
+<div id="metals"  
+        onmouseover="document.getElementById('METALS').style.display = 'block';"
+        onmouseout="document.getElementById('METALS').style.display = 'none';">Metals</div>
+
+<div id="metalloids"  
+        onmouseover="document.getElementById('METALLOIDS').style.display = 'block';"
+        onmouseout="document.getElementById('METALLOIDS').style.display = 'none';">Metalloids</div>
+
+<div id="nonmetals"  
+        onmouseover="document.getElementById('NONMETALS').style.display = 'block';"
+        onmouseout="document.getElementById('NONMETALS').style.display = 'none';">Nonmetals</div>        
+
+<div id="halogens"  
+        onmouseover="document.getElementById('HALOGENS').style.display = 'block';"
+        onmouseout="document.getElementById('HALOGENS').style.display = 'none';">Halogens</div>
+
+<div id="noble_gases"  
+        onmouseover="document.getElementById('NOBLE_GASES').style.display = 'block';"
+        onmouseout="document.getElementById('NOBLE_GASES').style.display = 'none';">Noble gases</div>
+        
+
+        
+
+					<!-- S BLOCK -->                   
+<div id="sblock">
+<div id="triggers" class="button"><img src="images/elements/1.png" rel="#element1"/></div>
+
+<div class="button"></div>
+
+<div id="triggers" class="button"><img src="images/elements/3.png" rel="#element3"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/4.png" rel="#element4"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/11.png" rel="#element11"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/12.png" rel="#element12"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/19.png" rel="#element19"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/20.png" rel="#element20"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/37.png" rel="#element37"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/38.png" rel="#element38"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/55.png" rel="#element55"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/56.png" rel="#element56"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/87.png" rel="#element87"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/88.png" rel="#element88"/></div>
+</div>
+
+			<!-- S BLOCK overlays -->
+<div class="simple_overlay" id="element1">
+  <img src="images/elements/H.png" />
+</div>
+
+<div class="simple_overlay" id="element2">
+  <img src="images/elements/He.png" />
+</div>
+
+<div class="simple_overlay" id="element3">
+  <img src="images/elements/Li.png" />
+</div>
+
+<div class="simple_overlay" id="element4">
+  <img src="images/elements/Be.png" />
+</div>
+
+<div class="simple_overlay" id="element11">
+  <img src="images/elements/Na.png" />
+</div>
+
+<div class="simple_overlay" id="element12">
+  <img src="images/elements/Mg.png" />
+</div>
+
+<div class="simple_overlay" id="element19">
+  <img src="images/elements/K.png" />
+</div>
+
+<div class="simple_overlay" id="element20">
+  <img src="images/elements/Ca.png" />
+</div>
+
+<div class="simple_overlay" id="element37">
+  <img src="images/elements/Rb.png" />
+</div>
+
+<div class="simple_overlay" id="element38">
+  <img src="images/elements/Sr.png" />
+</div>
+
+<div class="simple_overlay" id="element55">
+  <img src="images/elements/Cs.png" />
+</div>
+
+<div class="simple_overlay" id="element56">
+  <img src="images/elements/Ba.png" />
+</div>
+
+<div class="simple_overlay" id="element87">
+  <img src="images/elements/Fr.png" />
+</div>
+
+<div class="simple_overlay" id="element88">
+  <img src="images/elements/Ra.png" />
+</div>
+
+<!-- D BLOCK -->
+<div id="dblock">
+<div id="triggers" class="button"><img src="images/elements/21.png" rel="#element21"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/22.png" rel="#element22"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/23.png" rel="#element23"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/24.png" rel="#element24"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/25.png" rel="#element25"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/26.png" rel="#element26"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/27.png" rel="#element27"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/28.png" rel="#element28"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/29.png" rel="#element29"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/30.png" rel="#element30"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/39.png" rel="#element39"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/40.png" rel="#element40"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/41.png" rel="#element41"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/42.png" rel="#element42"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/43.png" rel="#element43"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/44.png" rel="#element44"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/45.png" rel="#element45"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/46.png" rel="#element46"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/47.png" rel="#element47"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/48.png" rel="#element48"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/71.png" rel="#element71"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/72.png" rel="#element72"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/73.png" rel="#element73"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/74.png" rel="#element74"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/75.png" rel="#element75"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/76.png" rel="#element76"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/77.png" rel="#element77"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/78.png" rel="#element78"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/79.png" rel="#element79"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/80.png" rel="#element80"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/103.png" rel="#element103"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/104.png" rel="#element104"/></div> 
+
+<div id="triggers" class="button"><img src="images/elements/105.png" rel="#element105"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/106.png" rel="#element106"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/107.png" rel="#element107"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/108.png" rel="#element108"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/109.png" rel="#element109"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/110.png" rel="#element110"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/111.png" rel="#element111"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/112.png" rel="#element112"/></div>
+</div>
+
+
+
+			<!-- D BLOCK overlays -->
+<div id="dblock2"></div>
+<div class="simple_overlay" id="element21">
+<img src="images/elements/Sc.png" />
+</div>
+
+<div class="simple_overlay" id="element22">
+<img src="images/elements/Ti.png" />
+</div>
+
+<div class="simple_overlay" id="element23">
+<img src="images/elements/V.png" />
+</div>
+
+<div class="simple_overlay" id="element24">
+<img src="images/elements/Cr.png" />
+</div>
+
+<div class="simple_overlay" id="element25">
+<img src="images/elements/Mn.png" />
+</div>
+
+<div class="simple_overlay" id="element26">
+<img src="images/elements/Fe.png" />
+</div>
+
+<div class="simple_overlay" id="element27">
+<img src="images/elements/Co.png" />
+</div>
+
+<div class="simple_overlay" id="element28">
+<img src="images/elements/Ni.png" />
+</div>
+
+<div class="simple_overlay" id="element29">
+<img src="images/elements/Cu.png" />
+</div>
+
+<div class="simple_overlay" id="element30">
+<img src="images/elements/Zn.png" />
+</div>
+
+<div class="simple_overlay" id="element39">
+<img src="images/elements/Y.png" />
+</div>
+
+<div class="simple_overlay" id="element40">
+<img src="images/elements/Zr.png" />
+</div>
+
+<div class="simple_overlay" id="element41">
+<img src="images/elements/Nb.png" />
+</div>
+
+<div class="simple_overlay" id="element42">
+<img src="images/elements/Mo.png" />
+</div>
+
+<div class="simple_overlay" id="element43">
+<img src="images/elements/Tc.png" />
+</div>
+
+<div class="simple_overlay" id="element44">
+<img src="images/elements/Ru.png" />
+</div>
+
+<div class="simple_overlay" id="element45">
+<img src="images/elements/Rh.png" />
+</div>
+
+<div class="simple_overlay" id="element46">
+<img src="images/elements/Pd.png" />
+</div>
+
+<div class="simple_overlay" id="element47">
+<img src="images/elements/Ag.png" />
+</div>
+
+<div class="simple_overlay" id="element48">
+<img src="images/elements/Cd.png" />
+</div>
+            
+<div class="simple_overlay" id="element71">
+  <img src="images/elements/Lu.png" />
+</div>
+
+<div class="simple_overlay" id="element72">
+  <img src="images/elements/Hf.png" />
+</div>
+
+<div class="simple_overlay" id="element73">
+  <img src="images/elements/Ta.png" />
+</div>
+
+<div class="simple_overlay" id="element74">
+  <img src="images/elements/W.png" />
+</div>
+
+<div class="simple_overlay" id="element75">
+  <img src="images/elements/Re.png" />
+</div>
+
+<div class="simple_overlay" id="element76">
+  <img src="images/elements/Os.png" />
+</div>
+
+<div class="simple_overlay" id="element77">
+  <img src="images/elements/Ir.png" />
+</div>
+
+<div class="simple_overlay" id="element78">
+  <img src="images/elements/Pt.png" />
+</div>
+
+<div class="simple_overlay" id="element79">
+  <img src="images/elements/Au.png" />
+</div>
+
+<div class="simple_overlay" id="element80">
+  <img src="images/elements/Hg.png" />
+</div>
+
+<div class="simple_overlay" id="element103">
+  <img src="images/elements/Lr.png" />
+</div>
+
+<div class="simple_overlay" id="element104">
+  <img src="images/elements/Rf.png" />
+</div>
+
+<div class="simple_overlay" id="element105">
+  <img src="images/elements/Db.png" />
+</div>
+
+<div class="simple_overlay" id="element106">
+  <img src="images/elements/Sg.png" />
+</div>
+
+<div class="simple_overlay" id="element107">
+  <img src="images/elements/Bh.png" />
+</div>
+
+<div class="simple_overlay" id="element108">
+  <img src="images/elements/Hs.png" />
+</div>
+
+<div class="simple_overlay" id="element109">
+  <img src="images/elements/Mt.png" />
+</div>
+
+<div class="simple_overlay" id="element110">
+  <img src="images/elements/Ds.png" />
+</div>
+
+<div class="simple_overlay" id="element111">
+  <img src="images/elements/Rg.png" />
+</div>
+
+<div class="simple_overlay" id="element112">
+  <img src="images/elements/Cn.png" />
+</div>
+
+<div id="ALKALI"></div>
+<div id="ALKALINE_EARTH"></div>
+<div id="TRANSITIONS"></div>
+<div id="LANTHANIDES"></div>
+<div id="ACTINIDES"></div>
+<div id="METALS"></div>
+<div id="METALLOIDS"></div>
+<div id="NONMETALS"></div>
+<div id="HALOGENS"></div>
+<div id="NOBLE_GASES"></div>
+
+
+			<!-- P BLOCK -->
+
+<div id="pblock">
+<div class="button"></div>
+<div class="button"></div>
+<div class="button"></div>
+<div class="button"></div>
+<div class="button"></div>
+
+<div id="triggers" class="button"><img src="images/elements/2.png" rel="#element2" /></div>
+
+<div id="triggers" class="button"><img src="images/elements/5.png" rel="#element5"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/6.png" rel="#element6"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/7.png" rel="#element7"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/8.png" rel="#element8"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/9.png" rel="#element9"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/10.png" rel="#element10"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/13.png" rel="#element13"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/14.png" rel="#element14"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/15.png" rel="#element15"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/16.png" rel="#element16"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/17.png" rel="#element17"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/18.png" rel="#element18"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/31.png" rel="#element31"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/32.png" rel="#element32"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/33.png" rel="#element33"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/34.png" rel="#element34"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/35.png" rel="#element35"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/36.png" rel="#element36"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/49.png" rel="#element49"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/50.png" rel="#element50"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/51.png" rel="#element51"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/52.png" rel="#element52"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/53.png" rel="#element53"/></div> 
+
+<div id="triggers" class="button"><img src="images/elements/54.png" rel="#element54"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/81.png" rel="#element81"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/82.png" rel="#element82"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/83.png" rel="#element83"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/84.png" rel="#element84"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/85.png" rel="#element85"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/86.png" rel="#element86"/></div>
+
+<div class="button"></div>
+
+<div id="triggers" class="button"><img src="images/elements/114.png" rel="#element114"/></div>
+
+<div class="button"></div>
+
+<div id="triggers" class="button"><img src="images/elements/116.png" rel="#element116"/></div>
+
+<div class="button"></div>
+
+<div class="button"></div>
+</div>
+
+			<!-- P BLOCK overlays -->
+<div id="pblock2"></div>            
+<div class="simple_overlay" id="element5">
+  <img src="images/elements/B.png" />
+</div>
+
+<div class="simple_overlay" id="element6">
+  <img src="images/elements/C.png" />
+</div>
+
+<div class="simple_overlay" id="element7">
+  <img src="images/elements/N.png" />
+</div>
+
+<div class="simple_overlay" id="element8">
+  <img src="images/elements/O.png" />
+</div>
+
+<div class="simple_overlay" id="element9">
+  <img src="images/elements/F.png" />
+</div>
+
+<div class="simple_overlay" id="element10">
+  <img src="images/elements/Ne.png" />
+</div>
+
+<div class="simple_overlay" id="element13">
+  <img src="images/elements/Al.png" />
+</div>
+
+<div class="simple_overlay" id="element14">
+  <img src="images/elements/Si.png" />
+</div>
+
+<div class="simple_overlay" id="element15">
+  <img src="images/elements/P.png" />
+</div>
+
+<div class="simple_overlay" id="element16">
+  <img src="images/elements/S.png" />
+</div>
+
+<div class="simple_overlay" id="element17">
+  <img src="images/elements/Cl.png" />
+</div>
+
+<div class="simple_overlay" id="element18">
+  <img src="images/elements/Ar.png" />
+</div>
+
+<div class="simple_overlay" id="element31">
+  <img src="images/elements/Ga.png" />
+</div>
+
+<div class="simple_overlay" id="element32">
+  <img src="images/elements/Ge.png" />
+</div>
+
+<div class="simple_overlay" id="element33">
+  <img src="images/elements/As.png" />
+</div>
+
+<div class="simple_overlay" id="element34">
+  <img src="images/elements/Se.png" />
+</div>
+
+<div class="simple_overlay" id="element35">
+  <img src="images/elements/Br.png" />
+</div>
+
+<div class="simple_overlay" id="element36">
+  <img src="images/elements/Kr.png" />
+</div>
+
+<div class="simple_overlay" id="element49">
+  <img src="images/elements/In.png" />
+</div>
+
+<div class="simple_overlay" id="element50">
+  <img src="images/elements/Sn.png" />
+</div>
+
+<div class="simple_overlay" id="element51">
+  <img src="images/elements/Sb.png" />
+</div>
+
+<div class="simple_overlay" id="element52">
+  <img src="images/elements/Te.png" />
+</div>
+
+<div class="simple_overlay" id="element53">
+  <img src="images/elements/I.png" />
+</div>
+
+<div class="simple_overlay" id="element54">
+  <img src="images/elements/Xe.png" />
+</div>
+
+<div class="simple_overlay" id="element81">
+  <img src="images/elements/Tl.png" />
+</div>
+
+<div class="simple_overlay" id="element82">
+  <img src="images/elements/Pb.png" />
+</div>
+
+<div class="simple_overlay" id="element83">
+  <img src="images/elements/Bi.png" />
+</div>
+
+<div class="simple_overlay" id="element84">
+  <img src="images/elements/Po.png" />
+</div>
+
+<div class="simple_overlay" id="element85">
+  <img src="images/elements/At.png" />
+</div>
+
+<div class="simple_overlay" id="element86">
+  <img src="images/elements/Rn.png" />
+</div>
+
+<div class="simple_overlay" id="element114">
+  <img src="images/elements/Fl.png" />
+</div>
+
+<div class="simple_overlay" id="element116">
+  <img src="images/elements/Lv.png" />
+</div>
+
+
+
+  <!-- F BLOCK -->
+<div id="fblock">
+<div id="triggers" class="button"><img src="images/elements/57.png" rel="#element57"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/58.png" rel="#element58"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/59.png" rel="#element59"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/60.png" rel="#element60"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/61.png" rel="#element61"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/62.png" rel="#element62"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/63.png" rel="#element63"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/64.png" rel="#element64"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/65.png" rel="#element65"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/66.png" rel="#element66"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/67.png" rel="#element67"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/68.png" rel="#element68"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/69.png" rel="#element69"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/70.png" rel="#element70"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/89.png" rel="#element89"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/90.png" rel="#element90"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/91.png" rel="#element91"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/92.png" rel="#element92"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/93.png" rel="#element93"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/94.png" rel="#element94"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/95.png" rel="#element95"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/96.png" rel="#element96"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/97.png" rel="#element97"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/98.png" rel="#element98"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/99.png" rel="#element99"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/100.png" rel="#element100"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/101.png" rel="#element101"/></div>
+
+<div id="triggers" class="button"><img src="images/elements/102.png" rel="#element102"/></div>
+</div>
+
+<div id="lanthanide"  
+        onmouseover="document.getElementById('actinide_series').style.display = 'block';"
+        onmouseout="document.getElementById('actinide_series').style.display = 'none';"><div style="position: absolute; left: 141px; top: 443px; z-index:6000;"><img src="images/actinide_icon.png" /></div></div>
+
+
+<div id="lanthanide"  
+        onmouseover="document.getElementById('lanthanide_series').style.display = 'block';"
+        onmouseout="document.getElementById('lanthanide_series').style.display = 'none';"><div style="position: absolute; left: 141px; top: 391px; z-index:8000;"><img src="images/lanthanide_icon.png" /></div></div>
+        
+
+
+  <!-- F BLOCK overlays -->
+<div id="lanthanide_series"></div>
+<div id="actinide_series"></div>
+<div id="fblock2"></div> 
+<div class="simple_overlay" id="element57">
+  <img src="images/elements/La.png" />
+</div>
+
+<div class="simple_overlay" id="element58">
+  <img src="images/elements/Ce.png" />
+</div>
+
+<div class="simple_overlay" id="element59">
+  <img src="images/elements/Pr.png" />
+</div>
+
+<div class="simple_overlay" id="element60">
+  <img src="images/elements/Nd.png" />
+</div>
+
+<div class="simple_overlay" id="element61">
+  <img src="images/elements/Pm.png" />
+</div>
+
+<div class="simple_overlay" id="element62">
+  <img src="images/elements/Sm.png" />
+</div>
+
+<div class="simple_overlay" id="element63">
+  <img src="images/elements/Eu.png" />
+</div>
+
+<div class="simple_overlay" id="element64">
+  <img src="images/elements/Gd.png" />
+</div>
+
+<div class="simple_overlay" id="element65">
+  <img src="images/elements/Tb.png" />
+</div>
+
+<div class="simple_overlay" id="element66">
+  <img src="images/elements/Dy.png" />
+</div>
+
+<div class="simple_overlay" id="element67">
+  <img src="images/elements/Ho.png" />
+</div>
+
+<div class="simple_overlay" id="element68">
+  <img src="images/elements/Er.png" />
+</div>
+
+<div class="simple_overlay" id="element69">
+  <img src="images/elements/Tm.png" />
+</div>
+
+<div class="simple_overlay" id="element70">
+  <img src="images/elements/Yb.png" />
+</div>
+
+<div class="simple_overlay" id="element89">
+  <img src="images/elements/Ac.png" />
+</div>
+
+<div class="simple_overlay" id="element90">
+  <img src="images/elements/Th.png" />
+</div>
+
+<div class="simple_overlay" id="element91">
+  <img src="images/elements/Pa.png" />
+</div>
+
+<div class="simple_overlay" id="element92">
+  <img src="images/elements/U.png" />
+</div>
+
+<div class="simple_overlay" id="element93">
+  <img src="images/elements/Np.png" />
+</div>
+
+<div class="simple_overlay" id="element94">
+  <img src="images/elements/Pu.png" />
+</div>
+
+<div class="simple_overlay" id="element95">
+  <img src="images/elements/Am.png" />
+</div>
+
+<div class="simple_overlay" id="element96">
+  <img src="images/elements/Cm.png" />
+</div>
+
+<div class="simple_overlay" id="element97">
+  <img src="images/elements/Bk.png" />
+</div>
+
+<div class="simple_overlay" id="element98">
+  <img src="images/elements/Cf.png" />
+</div>
+
+<div class="simple_overlay" id="element99">
+  <img src="images/elements/Es.png" />
+</div>
+
+<div class="simple_overlay" id="element100">
+  <img src="images/elements/Fm.png" />
+</div>
+
+<div class="simple_overlay" id="element101">
+  <img src="images/elements/Md.png" />
+</div>
+
+<div class="simple_overlay" id="element102">
+  <img src="images/elements/No.png" />
+</div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+      $("img[rel]").overlay();
+    });
+</script>
+
+</body>
+</html>
