@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+/* the overlayed element */
+.simple_overlay {
+
+    /* must be initially hidden */
+    display:none;
+
+    /* place overlay on top of other elements */
+    z-index:10000;
+
+    /* styling */
+
+    width:350px;
+    min-height:350px;
+	background-color:#FFF;
+	border-radius:20px;
+	-moz-border-radius:20px;
+    position: absolute;
+
+
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+
+/* close button positioned on upper right corner */
+.simple_overlay .close {
+    background-image: url(../images/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:30px;
+    width:30px;
+}
+
+.simple_overlay .name {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:36px;
+	color:#333;
+	text-align:center;
+	position: relative;
+	top:25px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.simple_overlay .number {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	color:#333;
+	text-align:center;
+	position: relative;
+	top:30px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.simple_overlay .mass {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:36px;
+	color:#333;
+	text-align:center;
+	position: relative;
+	top:160px;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+.simple_overlay .symbol {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:150px;
+	font-weight:600;
+	color:#333;
+	text-align:center;
+	position: relative;
+	top:90px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+
+
+/* RADIUS overlayed element */
+.radius_overlay {
+
+    /* must be initially hidden */
+    display:none;
+
+    /* place overlay on top of other elements */
+    z-index:10000;
+
+    /* styling */
+
+    width:348px;
+    min-height:348px;
+	background-image:url(../images/black_tint.png);
+	border:solid 1px #666666;
+	border-radius:20px;
+	-moz-border-radius:20px;
+    position: absolute;
+
+
+    /* CSS3 styling for latest browsers */
+    -moz-box-shadow:0 0 90px 5px #000;
+    -webkit-box-shadow: 0 0 90px #000;
+}
+
+/* close button positioned on upper right corner */
+.radius_overlay .close {
+    background-image: url(../images/close.png);
+    position:absolute;
+    right:-15px;
+    top:-15px;
+    cursor:pointer;
+    height:30px;
+    width:30px;
+}
+
+.radius_overlay .name {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:36px;
+	color:#CCC;
+	text-align:center;
+	position: relative;
+	top:25px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.radius_overlay .radiusPurple {
+	width:125px;
+	height:125px;
+	border-radius:125px;
+	-moz-border-radius:150px;
+	border:#60C;
+	background-color:#60C;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	color:#fff;
+	text-align:center;
+	line-height:125px;
+	position: relative;
+	top:75px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.radius_overlay .radiusYellow {
+	width:125px;
+	height:125px;
+	border-radius:125px;
+	-moz-border-radius:125px;
+	border:#FFA940;
+	background-color:#FFA940;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	color:#000;
+	text-align:center;
+	line-height:125px;
+	position: relative;
+	top:75px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.radius_overlay .radiusGreen {
+	width:125px;
+	height:125px;
+	border-radius:125px;
+	-moz-border-radius:125px;
+	border:#060;
+	background-color:#060;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	color:#fff;
+	text-align:center;
+	line-height:125px;
+	position: relative;
+	top:75px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.radius_overlay .radiusBlue {
+	width:125px;
+	height:125px;
+	border-radius:125px;
+	-moz-border-radius:125px;
+	border:#03F;
+	background-color:#03F;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	color:#fff;
+	text-align:center;
+	line-height:125px;
+	position: relative;
+	top:75px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.radius_overlay .radius {
+	width:100px;
+	height:100px;
+	border-radius:100px;
+	-moz-border-radius:100px;
+	background-color:#60C;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	color:#fff;
+	text-align:center;
+	line-height:100px;
+	position: relative;
+	top:75px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.radius_overlay .picometers {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:24px;
+	color:#CCC;
+	text-align:center;
+	line-height:24px;
+	position: relative;
+	top:110px;
+	margin-left:auto;
+	margin-right:auto;
+	display: run-in;
+}

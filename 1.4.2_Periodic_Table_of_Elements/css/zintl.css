@@ -1,0 +1,117 @@
+#amphoteric {
+	width:300px;
+	height:300px;
+	position: relative;
+}
+
+#buttonShow {
+	width: 55px;
+	height: 30px;
+	padding: 2px;
+	position: absolute;
+	left: -46px;
+	top: -315px;
+}
+
+
+#buttonShow.arrow {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FFF;
+	cursor: pointer;
+	float: left;
+	line-height: 12px;
+	z-index: 100;
+}
+
+#buttonShow.arrow span#right {
+	width: 0; 
+	height: 0; 
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;	
+	border-left: 12px solid #f00;
+	margin-left:5px;
+	float:right;
+}
+
+#buttonShow.arrow:hover span#right {display:none;}
+
+.arrow span#down {display:none;}
+
+#buttonShow.arrow:hover span#down {
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;	
+	border-top: 12px solid #f00;
+	margin-left:2px;
+	top:0px;
+	float:right;
+	display:inline;
+}
+
+
+#buttonHide {
+	width:60px;
+	height:30px;
+	padding: 2px;
+	position: relative;
+	left: 244px;
+	top: -3px;
+	display:none;
+}
+
+
+#buttonHide.arrow {
+	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FFF;
+	cursor: pointer;
+	float:left;
+	line-height:18px;
+}
+
+#buttonHide.arrow span#left {
+	width: 0; 
+	height: 0; 
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;	
+	border-right: 12px solid #f00;
+	margin-right:5px;
+	float:left;
+}
+
+#buttonHide.arrow:hover span#left {display:none;}
+
+.arrow span#up {display:none;}
+
+#buttonHide.arrow:hover span#up {
+	width: 0; 
+	height: 0; 
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;	
+	border-bottom: 12px solid #f00;
+	margin-right:5px;
+	top:0px;
+	float:left;
+	display:inline;
+}
+
+.border {position:absolute; display:none;}
+
+.borderh {height: 0px; width: 0px; border: 2px solid red;}
+.borderv {height: 0px; width: 0px; border: 2px solid red;}
+
+#step1 {left: 0px; top: 0px;}
+#step2 {left: 0px; top: 50px;}
+#step3 {left: 50px; top: 50px;}
+#step4 {left: 50px; top: 100px;}  
+#step5 {left:100px; top:100px;}
+#step6 {left:100px; top:150px;}
+#step7 {left:150px; top:150px;}
+#step8 {left:150px; top:200px;}
+#step9 {left:200px; top:200px;}
+#step10 {left:200px; top:250px;}
+#step11 {left:250px; top:250px;}

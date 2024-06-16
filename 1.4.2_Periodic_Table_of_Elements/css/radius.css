@@ -1,0 +1,154 @@
+#slot  {
+	background-color:#626581;
+	border-radius:5px;
+	-moz-border-radius:5px;   
+	width:48px;
+	height:48px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	 
+    position:relative;  
+    float:left;  
+ 
+}  
+  
+#slot.transparency  {
+	border-radius:5px;
+	-moz-border-radius:5px;  
+    opacity:0.5;  
+    filter:alpha(opacity=50);  
+    -moz-opacity:0.5;  
+    background-color:#FFF;  
+    width:48px;  
+    height:48px;  
+    position:absolute;  
+    top:0px;  
+    left:0px;  
+    z-index:-1;  
+}
+  
+  
+.radius  {	
+	position: relative;
+	text-align:center;	
+	font-family:Arial, Helvetica, sans-serif;	
+	box-shadow: 4px 4px 10px #000;  
+}
+
+.radiusPurple {
+	background-color:#60C;
+	border:solid 1px #CC66FF;
+	position: relative;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#CC66FF;
+	box-shadow: 4px 4px 10px #000;
+}
+
+.radiusPurple span#a {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:95%;
+	color:#CC66FF;
+}
+
+.radiusPurple:hover span#a  {display:none;}
+
+.radiusPurple span#b  {display:none;}
+
+.radiusPurple:hover span#b {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#CC66FF;
+	display:inline;
+}
+
+.radiusGreen {
+	background-color:#060;
+	border:solid 1px #0F0;
+	position: relative;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#0F0;
+	box-shadow: 4px 4px 10px #000;
+}
+
+.radiusGreen span#a {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:95%;
+	color:#0F0;
+}
+
+.radiusGreen:hover span#a  {display:none;}
+
+.radiusGreen span#b  {display:none;}
+
+.radiusGreen:hover span#b {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#0F0;
+	display:inline;
+}
+
+.radiusYellow {
+	background-color:#FFA940;
+	border:solid 1px #F6FF00;
+	position: relative;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#F6FF00;
+	box-shadow: 4px 4px 10px #000;
+}
+
+.radiusYellow span#a {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:95%;
+	color:#F6FF00;
+}
+
+.radiusYellow:hover span#a  {display:none;}
+
+.radiusYellow span#b  {display:none;}
+
+.radiusYellow:hover span#b {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#F6FF00;
+	display:inline;
+}
+
+
+.radiusBlue {
+	background-color:#03F;
+	border:solid 1px #00BAFF;
+	position: relative;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#00BAFF;
+	box-shadow: 4px 4px 10px #000;
+}
+
+.radiusBlue span#a {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:95%;
+	color:#00BAFF;
+}
+
+.radiusBlue:hover span#a  {display:none;}
+
+.radiusBlue span#b  {display:none;}
+
+.radiusBlue:hover span#b {
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	color:#00BAFF;
+	display:inline;
+}

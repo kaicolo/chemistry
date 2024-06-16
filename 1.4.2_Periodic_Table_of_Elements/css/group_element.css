@@ -1,0 +1,393 @@
+@charset "UTF-8";
+#ALKALI {
+	width: 50px;
+	height: 300px;
+	position: absolute;
+	top: 212px;
+	left: 72px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+#ALKALINE_EARTH {
+	width: 50px;
+	height: 300px;
+	position: absolute;
+	top: 212px;
+	left: 122px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+#TRANSITIONS {
+	width:500px;
+	height:200px;
+	position:absolute;
+	top:312px;
+	left:172px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+#LANTHANIDES {
+	width: 750px;
+	height: 50px;
+	position:absolute;
+	top: 560px;
+	left: 222px;
+	float: left;
+	z-index: 100;
+	display:none;
+}
+
+#ACTINIDES {
+	width: 700px;
+	height: 50px;
+	position: absolute;
+	top: 610px;
+	left: 222px;
+	float: left;
+	z-index: 12;
+	display:none;
+}
+
+#METALS {
+	width: 850px;
+	height: 400px;
+	position: absolute;
+	top: 213px;
+	left: 72px;
+	float: left;
+	z-index: 5;
+	display:none;
+}
+
+
+#METALLOIDS {
+	width: 200px;
+	height: 250px;
+	position: absolute;
+	top: 212px;
+	left: 672px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+#NON_METALS {
+	width: 250px;
+	height: 300px;
+	position: absolute;
+	top: 162px;
+	left: 722px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+#HALOGENS {
+	width: 50px;
+	height: 250px;
+	position: absolute;
+	top:212px;
+	left: 872px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+#NOBLE_GASES {
+	width: 50px;
+	height: 300px;
+	position: absolute;
+	top:162px;
+	left: 922px;
+	float: left;
+	z-index: 50;
+	display:none;
+}
+
+.tileAlkali_metals {
+	background-color:#FF8525;
+	width:46px;
+	height:36px;
+	border:solid 1px #FF8525;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileAlkali_metals:hover {
+	background-color:#ffd1ad;
+	width:46px;
+	height:36px;
+	border:solid 1px #ffd1ad;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileAlkaline_earth {
+	background-color:#ED9757;
+	width:46px;
+	height:36px;
+	border:solid 1px #ED9757;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileAlkaline_earth:hover {
+	background-color:#edc19f;
+	width:46px;
+	height:36px;
+	border:solid 1px #edc19f;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileTransition {
+	background-color:#D3CDB4;
+	width:46px;
+	height:36px;
+	border:solid 1px #D3CDB4;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileTransition:hover {
+	background-color:#eceae1;
+	width:46px;
+	height:36px;
+	border:solid 1px #eceae1;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileLanthanides {
+	background-color:#BE90DE;
+	width:46px;
+	height:36px;
+	border:solid 1px #BE90DE;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileLanthanides:hover {
+	background-color:#D3C4DE;
+	width:46px;
+	height:36px;
+	border:solid 1px #D3C4DE;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileActinides {
+	background-color:#571387;
+	width:46px;
+	height:36px;
+	border:solid 1px #571387;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileActinides:hover {
+	background-color:#BA88DE;
+	width:46px;
+	height:36px;
+	border:solid 1px #BA88DE;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileMETALS {
+	background-color:#191A22;
+	width:46px;
+	height:36px;
+	border:solid 1px #999;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileMETALS:hover {
+	background-color:#3E4154;
+	width:46px;
+	height:36px;
+	border:solid 1px #999;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileMETALLOIDS {
+	background-color:#003DC3;
+	width:46px;
+	height:36px;
+	border:solid 1px #003DC3;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileMETALLOIDS:hover {
+	background-color:#5E7FC7;
+	width:46px;
+	height:36px;
+	border:solid 1px #5E7FC7;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileNonMetals {
+	background-color:#BBE2C3;
+	width:46px;
+	height:36px;
+	border:solid 1px #BBE2C3;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileNonMetals:hover {
+	background-color:#D2F5DA;
+	width:46px;
+	height:36px;
+	border:solid 1px #D2F5DA;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileHalogens {
+	background-color:#FFF000;
+	width:46px;
+	height:36px;
+	border:solid 1px #FFF000;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileHalogens:hover {
+	background-color:#FFFBC3;
+	width:46px;
+	height:36px;
+	border:solid 1px #FFFBC3;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileNobleGases {
+	background-color:#44E711;
+	width:46px;
+	height:36px;
+	border:solid 1px #44E711;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+.tileNobleGases:hover {
+	background-color:#84FB5E;
+	width:46px;
+	height:36px;
+	border:solid 1px #84FB5E;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	padding-top:10px;
+	text-align:center;
+	margin:1px;
+	float:left;
+	cursor:pointer;	
+}
+
+/* CSS Document */

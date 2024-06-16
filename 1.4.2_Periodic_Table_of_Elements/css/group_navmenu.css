@@ -1,0 +1,405 @@
+@charset "UTF-8";
+
+#alkali_metals { }
+
+.alkaliOFF {
+	width: 80px;
+	position: absolute;
+	left: 175px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+.alkaliON {
+	width: 80px;
+	background-color:#FF8525;
+	position: absolute;
+	left: 175px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#1d1103;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #1d1103;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#alkaline_earth { }
+
+.alkaline_earthOFF {
+	width: 80px;
+	position: absolute;
+	left: 175px;
+	top: 160px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+	
+}
+
+
+.alkaline_earthON {
+	width: 80px;
+	background-color:#F6935D;
+	position: absolute;
+	left: 175px;
+	top: 160px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#000;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #000;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#transitions { }
+
+.transitionsOFF {
+	width: 80px;
+	position: absolute;
+	left: 275px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+.transitionsON {
+	width: 80px;
+	background-color:#d3cdb4;
+	position: absolute;
+	left: 275px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#lanthanides { }
+
+
+.lanthanidesOFF {
+	width: 80px;
+	position: absolute;
+	left: 275px;
+	top: 160px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+
+.lanthanidesON {
+	width: 80px;
+	background-color:#BF94DB;
+	position: absolute;
+	left: 275px;
+	top: 160px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#306;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #306;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#actinides { }
+
+
+.actinidesOFF {
+	width: 80px;
+	position: absolute;
+	left: 375px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+.actinidesON {
+	width: 80px;
+	background-color:#562184;
+	position: absolute;
+	left: 375px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #fff;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#metals { }
+
+.metalsOFF {
+	width: 80px;
+	position: absolute;
+	left: 375px;
+	top: 160px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+.metalsON {
+	width: 80px;
+	background-color:#191A22;
+	position: absolute;
+	left: 375px;
+	top: 160px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #fff;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#metalloids { }
+
+
+.metalloidsOFF {
+	width: 80px;
+	position: absolute;
+	left: 475px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.metalloidsON {
+	width: 80px;
+	background-color: #003DC3;
+	position: absolute;
+	left: 475px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#fff;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #fff;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#non_metals { }
+
+.non_metalsOFF {
+	width: 80px;
+	position: absolute;
+	left: 475px;
+	top: 160px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+.non_metalsON {
+	width: 80px;
+	background-color: #BBE2C3;
+	position: absolute;
+	left: 475px;
+	top: 160px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+#halogens { }
+
+
+.halogensOFF {
+	width: 80px;
+	position: absolute;
+	left: 575px;
+	top: 125px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+.halogensON {
+	width: 80px;
+	background-color:#FFEB3E;
+	position: absolute;
+	left: 575px;
+	top: 125px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}
+
+
+#noble_gases { }
+
+.noble_gasesOFF {
+	width: 80px;
+	position: absolute;
+	left: 575px;
+	top: 160px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFF;
+	text-align: center;
+	line-height: 12px;
+	cursor: pointer;
+	border: solid 1px #FFFFFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	z-index:1000;
+}
+
+.noble_gasesON {
+	width: 80px;
+	background-color:#1CE43E;
+	position: absolute;
+	left: 575px;
+	top: 160px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	text-align:center;
+	line-height:12px;
+	cursor:pointer;
+	border:solid 1px #333;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	z-index:1000;
+}/* CSS Document */
+
