@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Periodic Table of Elements</title>
+
+<style type="text/css">
+
+#container {
+	width:1000px;
+	height:780px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#content {
+	width:100%;
+	max-width:1000px;  
+	height:700px;
+}
+
+#footer {
+	background-color:#000;
+	width:auto;
+	height:80px;
+	padding:10px 25% 2px 25%;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	-moz-border-radius-bottomright:5px;
+}
+
+.button {
+	background-color:#0A0B11;
+	width:70px;
+	height:70px;
+	border-radius:70px;
+	-moz-border-radius:70px;
+	border:solid 1px #FFFFFF;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:32px;
+	line-height:70px;
+	color:#FFF;
+	margin-left:25px;
+	margin-right:25px;
+	cursor:pointer;
+	float:left;
+}
+
+.button:hover {
+	background-color:#FFFFFF;
+	width:70px;
+	height:70px;
+	border-radius:70px;
+	-moz-border-radius:70px;
+	border:solid 1px #FFFFFF;
+	text-align:center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:32px;
+	line-height:70px;
+	color:#000;
+	margin-left:25px;
+	margin-right:25px;
+	cursor:pointer;
+	float:left;
+}
+
+a:link {
+	text-decoration: none;
+	
+}
+a:visited {
+	text-decoration: none;
+	
+}
+a:hover {
+	text-decoration: none;
+	
+}
+a:active {
+	text-decoration: none;
+	
+}
+
+img {border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="container">
+<div id="content">
+<script language="javascript">
+<!--//Drop-down Document Viewer II- © Dynamic Drive (www.dynamicdrive.com)
+//For full source code, 100's more DHTML scripts, and TOS,
+//visit http://www.dynamicdrive.com
+
+//Specify display mode (0 or 1)
+//0 causes document to be displayed in an inline frame, while 1 in a new browser window
+var displaymode=0
+//if displaymode=0, configure inline frame attributes (ie: dimensions, intial document shown
+var iframecode='<iframe id="periodic" src="resources/PTE_symbols.html" style="width:1000px; height:700px; border:none; padding:0px; margin:0px;" scrolling="no"></iframe>'
+
+/////NO NEED TO EDIT BELOW HERE////////////
+
+if (displaymode==0)
+document.write(iframecode)
+
+function jumpto(inputurl){
+if (document.getElementById&&displaymode==0)
+document.getElementById("periodic").src=inputurl
+else if (document.all&&displaymode==0)
+document.all.external.src=inputurl
+else{
+if (!window.win2||win2.closed)
+win2=window.open(inputurl)
+//else if win2 already exists
+else{
+win2.location=inputurl
+win2.focus()
+}
+}
+}
+//-->
+</script>
+
+</div>
+<div id="footer">
+<a href="javascript:jumpto('resources/PTE_symbols.html')"><div id="button1" class="button">Aa</div></a>
+
+<a href="javascript:jumpto('resources/PTE_numbers.html')"><div id="button2" class="button" style="font-size:24px; line-height:24px; padding-top:10px; height:60px;">1A<br />1</div></a>
+
+<a href="javascript:jumpto('resources/PTE_radius.html')"><div id="button1" class="button">R</div></a>
+
+<a href="javascript:jumpto('resources/PTE_electronegativity.html')"><div id="button1" class="button">E</div></a>
+
+
+</div>
+
+</div>
+
+</body>
+</html>
