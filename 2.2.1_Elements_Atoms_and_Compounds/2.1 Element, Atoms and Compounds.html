@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+ 
+<title>Electron distribution diagrams for the first 18 elements in the periodic table.</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+ 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+ 
+<script type="text/javascript">
+
+$(init);
+
+function init() {
+
+
+    $('#element_1').data( 'number', 1 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_2').data( 'number', 2 ).attr( 'id', 'card'+2 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_3').data( 'number', 3 ).attr( 'id', 'card'+3 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_4').data( 'number', 4 ).attr( 'id', 'card'+4 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_5').data( 'number', 5 ).attr( 'id', 'card'+5 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_6').data( 'number', 6 ).attr( 'id', 'card'+6 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_7').data( 'number', 7 ).attr( 'id', 'card'+7 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_8').data( 'number', 8 ).attr( 'id', 'card'+8 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_9').data( 'number', 9 ).attr( 'id', 'card'+9 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+	
+	$('#element_10').data( 'number', 10 ).attr( 'id', 'card'+10 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_11').data( 'number', 11 ).attr( 'id', 'card'+11 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_12').data( 'number', 12 ).attr( 'id', 'card'+12 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_13').data( 'number', 13 ).attr( 'id', 'card'+13 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_14').data( 'number', 14 ).attr( 'id', 'card'+14 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_15').data( 'number', 15 ).attr( 'id', 'card'+15 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_16').data( 'number', 16 ).attr( 'id', 'card'+16 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#element_17').data( 'number', 17 ).attr( 'id', 'card'+17 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+	
+	$('#element_18').data( 'number', 18 ).attr( 'id', 'card'+18 ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+
+  // Create the element slots
+
+    $('#slot_1').data( 'number', 1 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_2').data( 'number', 2 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_3').data( 'number', 3 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_4').data( 'number', 4 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_5').data( 'number', 5 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_6').data( 'number', 6 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_7').data( 'number', 7 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_8').data( 'number', 8 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_9').data( 'number', 9 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+		
+		$('#slot_10').data( 'number', 10 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+	
+	$('#slot_11').data( 'number', 11 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_12').data( 'number', 12 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_13').data( 'number', 13 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+		
+		$('#slot_14').data( 'number', 14 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+	
+	$('#slot_15').data( 'number', 15 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_16').data( 'number', 16 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_17').data( 'number', 17 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+		
+		$('#slot_18').data( 'number', 18 ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+}
+
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+
+  if ( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+  } 
+}
+
+</script>
+
+<style>
+/* Add some margin to the page and set a default font and colour */
+
+body {
+    margin: 0px 0px 0px 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    color: #333;
+}
+
+/* Give headings their own font */
+
+h1, h2, h3, h4 {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: left;
+	font-size: 21px;
+}
+
+/* Main content area */
+
+#content {
+	width:1300px;
+  margin: 20px 20px 20px 20px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+/* Slots for final card positions */
+
+#cardSlots {
+  margin: 0px 0px 0px 0px;
+}
+
+/* The initial pile of unsorted cards */
+
+#cardPile {
+	margin: 0;
+	width: 1000px;
+}
+
+#cardPile {
+  width: 150px;
+  height: 150px;
+  padding: 0px;
+}
+
+#cardSlots {
+	background-image: url(images/tabe_backdrop.png);
+    width: 1300px;
+    height: 500px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: normal;
+}
+
+/* Individual cards and slots */
+
+#cardSlots div, #cardPile div {
+    float: left;
+    width: 150px;
+    height: 150px;
+    padding: 0px;
+    padding-bottom: 0;
+    border: 0px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 0px;
+    margin: 0 0 0 0px;
+    background:;
+}
+
+#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+#cardSlots div {
+  border: 0px dashed #333;
+}
+
+.slots {
+
+}
+
+#cardPile div {
+    background: #c1ecfc;
+    border: 1px solid #005575;
+    color: #005575;
+	position: absolute;
+	left:10;
+	top:1000;
+    font-size: 11px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+/* Individually coloured cards */
+
+#card1.correct { background: #0CF; color: #fff;}
+#card2.correct { background: #09F; color: #fff;}
+#card3.correct { background: #06F; color: #fff;}
+#card4.correct { background: #03F; color: #fff;}
+#card5.correct { background: #00F; color: #fff;}
+#card6.correct { background: #30F; color: #fff;}
+#card7.correct { background: #33F; color: #fff;}
+#card8.correct { background: #36F; color: #fff;}
+#card9.correct { background: #39F; color: #fff;}
+#card10.correct { background: #3CF; color: #fff;}
+
+#instructions {
+	position: relative;
+	float: left;
+	width: 430px;
+	height: 110px;
+	background-color: #F3F1E6;
+	border-style: solid;
+	box-shadow: 2px 2px #888888;
+	border-color: #666;
+	border-width: 1px;
+	left: 175px;
+	top: -150px;
+	z-index: -999;
+	padding: 20px;
+	font-size: 12px;
+	text-align: left;
+}
+
+#inset:hover {
+	width:408px;
+	height:250px;
+	border-style:solid;
+	border-width:2px;
+	
+}
+
+
+</style>
+</head>
+
+
+<body>
+<div id="content">
+
+<div style="position: absolute; left: 300px; top: 25px; width: 400px"><h2>Electron distribution diagrams for the first 18 elements in the periodic table.</h2></div>
+
+<div>
+  <img src="images/PT-Helium.png" width="229" height="150" id="inset" style="position: absolute; left: 875px; top: 20px; z-index: 1000; width: 229; height: 150;" />
+</div>  
+  
+  <div id="cardSlots"> 
+  <div id="slot_1" style="position: relative ; left: 99px; top: 0px;"></div>
+  <div id="slot_2" style="position: relative ; left: 1002px; top: 0px;"></div>
+  <div id="slot_3" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_4" style="position: relative; left: -200px; top: 150px;"></div>
+  <div id="slot_5" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_6" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_7" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_8" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_9" style="position: relative ; left: 1000px; top: 0px;"></div>
+  <div id="slot_10" style="position: relative ; left: 1000px; top: 0px;"></div>
+  <div id="slot_11" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_12" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_13" style="position: relative; left: -200px; top: 150px;"></div>
+  <div id="slot_14" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_15" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_16" style="position: relative ; left: -200px; top: 150px;"></div>
+  <div id="slot_17" style="position: relative ; left: 1000px; top: 0px;"></div>
+  <div id="slot_18" style="position: relative ; left: 1000px; top: 0px;"></div> 
+  </div>
+  
+  <div id="cardPile"> 
+  <div id="element_1"><img id="element18" src="images/01-Hydrogen.png" width:150; height:150;" /></div>
+
+<div id="element_10"><img id="element9" src="images/10-Neon.png" width:150; height:150;" /></div>
+
+<div id="element_2"><img id="element17" src="images/02-Helium.png" width:150; height:150;" /></div>
+
+<div id="element_12"><img id="element7" src="images/12-Magnesium.png" width:150; height:150;" /></div>
+
+<div id="element_14"><img id="element5" src="images/14-Silicon.png" width:150; height:150;" /></div>
+
+<div id="element_7"><img id="element12" src="images/07-Nitrogen.png" width:150; height:150;" /></div>
+
+<div id="element_13"><img id="element6" src="images/13-Aluminum.png" width:150; height:150;" /></div>
+
+<div id="element_16"><img id="element3" src="images/16-Sulfur.png" width:150; height:150;" /></div>
+
+<div id="element_4"><img id="element15" src="images/04-Beryllium.png" width:150; height:150;" /></div>
+
+<div id="element_17"><img id="element2" src="images/17-Chlorine.png" width:150; height:150;" /></div>
+
+<div id="element_3"><img id="element16" src="images/03-Lithium.png" width:150; height:150;" /></div>
+
+<div id="element_11"><img id="element8" src="images/11-Sodium.png" width:150; height:150;" /></div>
+
+<div id="element_9"><img id="element10" src="images/09-Fluorine.png" width:150; height:150;" /></div>
+
+<div id="element_15"><img id="element4" src="images/15-Phosphorus.png" width:150; height:150;"/></div>
+
+<div id="element_8"><img id="element11" src="images/08-Oxygen.png" width:150; height:150;" /></div>
+
+<div id="element_6"><img id="element13" src="images/06-Carbon.png" width:150; height:150;" /></div>
+
+<div id="element_5"><img id="element14" src="images/05-Boron.png" width:150; height:150;" /></div>
+
+<div id="element_18"><img id="element1" src="images/18-Argon.png" width:150; height:150;" /></div>
+   
+   
+</div>
+
+ <div id="instructions">
+  
+      <p>In a standard periodic table information for each element is presented as shown for helium in the inset above. In the diagrams in this table, electrons are represented as red dots and electron shells as concentric circles.
+                  
+    <p>◀Drag the element on the left to its correct postion on the Electron Distribution Diagram.        
+              </div> 
+  
+</div>
+
+
+</body>
+</html>
