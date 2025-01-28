@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lewis Structures</title>
+
+
+<style type="text/css">
+#container {
+	width:750px;
+	height:500px;
+	padding:0px;
+}
+
+#info {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 500px;
+	top: 35px;
+	z-index: 700;
+	cursor:pointer;
+}
+
+
+.check {background-image: url(images/info_icon.png);}
+.uncheck {background-image:url(images/info_icon_close.png);}
+
+#instructions {
+	background-image: url(images/screen_blur.png);
+	width: 450px;
+	height: 400px;
+	padding:30px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	line-height:14px;
+	color:#FFF;
+	position: absolute;
+	z-index: 500;
+	left: 25px;
+	top: 25px;
+	display:none;
+}
+
+#navigation {
+	width:750px;
+	height:50px;
+	padding-left:25px;
+}
+
+#button {
+	background-image:url(images/menu_button.png);
+	width:50px;
+	height:25px;
+	cursor:pointer;
+	margin-left:25px;
+}
+
+#disclaimer {
+	width:730px;
+	padding-left:25px;
+	font-size:10px;
+}
+
+img {border:none;}
+
+</style>
+
+<link rel="stylesheet" href="css/sidetogglemenu.css" />
+
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>-->
+	<script type="text/javascript" src="javascript/jquery.min.js"></script>
+	<script src="javascript/sidetogglemenu.js">
+
+/*
+* Responsive Side Toggle Menu(c) Dynamic Drive (www.dynamicdrive.com)
+* Last updated: May 28th, 13'
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+*/
+
+</script>
+
+<script>
+
+jQuery(function(){ // on DOM load
+	menu2 = new sidetogglemenu({  // initialize first menu example
+		id: 'togglemenu2',
+		marginoffset: 0,
+		pushcontent: false,
+		dismissonclick:true,
+		position: 'right',
+		revealamt: -5
+	})
+
+	
+})
+
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#info").click(function(){
+    $("#instructions").toggle();
+  });
+});
+</script>
+
+
+</head>
+
+<body>
+<div id="container">
+
+  <div id="info" class="check" onclick="changeclass();"></div>
+
+<script>
+$('#info').click(function() {
+    $(this).toggleClass('check');
+    $(this).toggleClass('uncheck');
+});
+</script>
+
+<div id="instructions">
+<p><h1>Instructions</h1></p>
+
+<p>Fill in the Lewis Structure activity by using the total number of Valence Electrons description on the right for each assigned molecule. The number of electron groups will help you assemble the Lewis Structure.</p> 
+
+<p>Begin first by dragging the element symbols on the bottom right to the appropriate slots provided in the workspace. (For example N for nitrogen)</p>
+<ul>
+1.	The center slot is for the single element (atom). Put the remaining elements around the center element.</ul>
+<ul>
+2.	Once the elements are in place, create the bonds for each element by clicking in the area that is adjacent to each element on all 4 sides.</ul>
+<ul>
+3.	Determine whether there is a single bond, double bond or lone pairs by clicking one, two, three, or four times.
+</ul> 
+
+<p>Practice with other elements by clicking the menu button and selecting the molecule from the list on the right.</p>
+ </div>
+
+
+
+<script language="javascript">
+<!--
+
+//Drop-down Document Viewer II- © Dynamic Drive (www.dynamicdrive.com)
+//For full source code, 100's more DHTML scripts, and TOS,
+//visit http://www.dynamicdrive.com
+
+//Specify display mode (0 or 1)
+//0 causes document to be displayed in an inline frame, while 1 in a new browser window
+var displaymode=0
+//if displaymode=0, configure inline frame attributes (ie: dimensions, intial document shown
+var iframecode='<iframe id="lewis_structure" src="molecules/1-NH3.html" style="width:750px; height:500px; border:none;" scrolling="no"></iframe></iframe>'
+
+/////NO NEED TO EDIT BELOW HERE////////////
+
+if (displaymode==0)
+document.write(iframecode)
+
+function jumpto(inputurl){
+if (document.getElementById&&displaymode==0)
+document.getElementById("lewis_structure").src=inputurl
+else if (document.all&&displaymode==0)
+document.all.external.src=inputurl
+else{
+if (!window.win2||win2.closed)
+win2=window.open(inputurl)
+//else if win2 already exists
+else{
+win2.location=inputurl
+win2.focus()
+}
+}
+}
+//-->
+</script></div>
+
+
+<div id="button" class="sideviewtoggle" onclick="menu2.toggle();"></div>
+
+<div id="togglemenu2" class="sidetogglemenu">
+
+	<ul>
+	<li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/1-NH3.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/NH3_button.png" /></div></a></li>
+	<li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/2-H2O.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/H2O_button.png" /></div></a></li>
+	<li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/3-NCl3.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/NCl3_button.png" /></div></a></li>
+	<li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/4-CBr4.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/CBr4_button.png" /></div></a></li>
+	<li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/5-SO3.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/SO3_button.png" /></div></a></li>
+	<li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/6-CO2.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/CO2_button.png" /></div></a></li>
+    <li><a href="javascript:jumpto('https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/molecules/7-BCl3.html')"><div id="button_2"><img src="https://kaicolo.github.io/chemistry/2.1.1_Lewis_Structure/images/BCl3_button.png" /></div></a></li>
+	</ul>
+	
+
+</div>
+</div>
+
+<br />
+<br />
+
+<div id="disclaimer">
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />Except where otherwise noted, this work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">The Community College Consortium for Bioscience Credentials</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons Attribution 3.0 Unported License</a>.
+
+<p>This product was funded by a grant awarded by the U.S. Department of Labor’s Employment and Training Administration. The product was created by the grantee and does not necessarily reflect the official position of the U.S.</p>
+<p>
+Department of Labor. The Department of Labor makes no guarantees, warranties, or assurances of any kind, express or implied, with respect to such information, including any information on linked sites and including, but not limited to, accuracy of the information or its completeness, timeliness, usefulness, adequacy, continued availability, or ownership.</p>
+</div>
+</body>
+</html>

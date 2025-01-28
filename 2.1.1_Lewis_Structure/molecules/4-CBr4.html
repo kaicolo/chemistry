@@ -1,0 +1,776 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>CBr4</title>
+
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>-->
+<script type="text/javascript" src="../javascript/jquery.min.js"></script>
+<script type="text/javascript" src="../javascript/jquery-ui.min.js"></script>
+
+
+<script type="text/javascript">
+
+$(init);
+
+function init() {
+
+			<!-- ELEMENT (A) SCRIPT -->
+   $('#element5A').data( 'number', 1 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#cardPile1 div',
+      cursor: 'move',
+      revert: true
+    } );
+
+	
+	<!-- ELEMENT (B) SCRIPT -->
+    $('#element1B').data( 'number', 2 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#cardPile2 div',
+      cursor: 'move',
+      revert: true
+    } );
+
+    $('#element2B').data( 'number', 2 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#cardPile2 div',
+      cursor: 'move',
+      revert: true
+    } );
+
+    $('#element3B').data( 'number', 2 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#cardPile2 div',
+      cursor: 'move',
+      revert: true
+    } );
+
+    $('#element4B').data( 'number', 2 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#cardPile2 div',
+      cursor: 'move',
+      revert: true
+    } );
+
+    $('#element5B').data( 'number', 2 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#cardPile2 div',
+      cursor: 'move',
+      revert: true
+    } );
+	
+// Create the Element slots
+
+ 
+    $('.box4_dotted').data( 'number', 2 ).droppable( {
+      accept: '#cardPile2 div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+	
+	   $('#slot_5a').data( 'number', 1 ).droppable( {
+      accept: '#cardPile1 div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+
+	
+	
+	}
+
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+
+  if ( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+  } 
+}
+
+</script>
+
+
+
+<style type="text/css">
+#container {
+	width:700px;
+	height:460px;
+	padding:10px;
+}
+
+#stage {
+	background-image:url(../images/stage_background.png);
+	width:430px;
+	height:424px;
+	float:left;
+	padding:18px 40px;
+	margin-right:10px;
+}
+
+#map {
+	width:425px;
+	height:425px;
+}
+
+.box1 {
+	width:25px;
+	height:25px;
+	float:left;
+}
+
+.box2 {
+	width:25px;
+	height:75px;
+	float:left;
+}
+
+.box3 {
+	width:75px;
+	height:25px;
+	float:left;
+}
+
+.box4 {
+	width:75px;
+	height:75px;
+	float:left;
+}
+
+.box4_dotted {
+	background-color:#CCC;
+	width:73px;
+	height:73px;
+	float:left;
+	border:dotted 1px #666666;
+	text-align:center;
+	line-height:73px;
+}
+
+.box4R {
+	width:25px;
+	height:75px;
+	float:left;
+	padding-left:50px;
+}
+
+.box4L {
+	width:25px;
+	height:75px;
+	float:left;
+	padding-right:50px;
+}
+
+.box4B {
+	width:75px;
+	height:25px;
+	float:left;
+	padding-top:50px;
+}
+
+.box4T {
+	width:75px;
+	height:25px;
+	float:left;
+	padding-bottom:50px;
+}
+
+
+#worksheet {
+	width:180px;
+	height:460px;
+	float:left;
+}
+
+#molecule {
+	width:auto;
+	height:60px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:48px;
+	font-weight:bold;
+	text-align:center;
+	color:#333;
+	line-height:60px;
+}
+
+.sub {
+	font-size: 18px;
+	vertical-align:sub;
+}
+
+#valenceTotal {
+	width:auto;
+	height:65px;
+	padding:10px 5px 15px 5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	border-top:solid 1px #999999;
+}
+
+
+
+.info {
+	height:45px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333;
+	padding-top:2px;
+	line-height:14px;
+}
+
+#electronGroups {
+	width:auto;
+	height:25px;
+	padding:20px 5px 20px 5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	border-top:solid 1px #999999;
+}
+
+#groupHeads {
+	width:140px;
+	height:28px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	float:left;
+	margin-bottom:10px;
+}
+
+.dot {
+	width:18px;
+	height:18px;
+	background-color:#fff;
+	float:left;
+	padding:2px;
+	border:solid 1px #333;
+	border-radius:18px;
+	-moz-border-radius:25px;
+	text-align:center;
+	line-height:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#333;
+}
+
+#bonds_lonePairs {
+	width:auto;
+	height:60px;
+	padding:5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	border-top:solid 1px #999999;
+}
+
+.bonds_pairs {
+	width:85px;
+	height:60px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	float:left;
+	line-height:28px;
+	text-align:center;
+}
+
+#formalCharges {
+	width:auto;
+	height:60px;
+	padding:10px 5px 10px 5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	border-top:solid 1px #999999;
+}
+
+.charges {
+	width:30px;
+	height:45px;
+	text-align:right;
+	font-weight:bold;
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	padding-right:2px;
+	padding-top:2px;
+	line-height:14px;
+}
+
+#elementBin {
+	width:auto;
+	height:75px;
+	padding:8px 5px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	border-top:solid 1px #999999;
+}
+
+#cardPile1 {
+	width:75px;
+	height:75px;
+	border:dashed 1px #999999;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	float:left;
+	margin-right:8px;
+	position:relative;
+}
+
+.cards {position:absolute}
+
+#cardPile2 {
+	width:75px;
+	height:75px;
+	border:dashed 1px #999999;
+	border-radius:2px;
+	-moz-border-radius:2px;
+	float:left;
+	margin-left:8px;	
+}
+
+
+
+#slot_1a.hovered, #slot_2a.hovered, #slot_3a.hovered, #slot_4a.hovered, #slot_5a.hovered {background:#00F;}
+
+#slot_1b.hovered, #slot_2b.hovered, #slot_3b.hovered, #slot_4b.hovered, #slot_5b.hovered {background:#00F;}
+
+img {border:none;}
+
+</style>
+
+
+</head>
+
+<body>
+<div id="container">
+
+<div id="stage">
+<div id="map">
+<div class="box1"></div>
+<div class="box3"></div>
+<div class="box3"></div>
+<div class="box3">
+<img src="../images/0-dot_hor.png" id="image13" style="cursor:pointer;" />
+<img src="../images/1-dot_hor.png" id="image14" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image13").click(function ( event ) {
+      $(this).hide();
+      $("#image14").show();
+    });
+ $("#image14").click(function ( event ) {
+      $(this).hide();
+      $("#image13").show();
+    }); 
+</script>
+</div>
+<div class="box3"></div>
+<div class="box3"></div>
+<div class="box1"></div>
+
+<div class="box2"></div>
+<div class="box4"></div>
+<div class="box4R">
+<div class="box2">
+<img src="../images/0-dot_vert.png" id="image11" style="cursor:pointer;" />
+<img src="../images/1-dot_vert.png" id="image12" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image11").click(function ( event ) {
+      $(this).hide();
+      $("#image12").show();
+    });
+ $("#image12").click(function ( event ) {
+      $(this).hide();
+      $("#image11").show();
+    }); 
+</script>
+</div>
+</div>
+<div id="slot_1b" class="box4_dotted">1</div>
+<div class="box4L">
+<div class="box2">
+<img src="../images/0-dot_vert.png" id="image5" style="cursor:pointer;" />
+<img src="../images/1-dot_vert.png" id="image6" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image5").click(function ( event ) {
+      $(this).hide();
+      $("#image6").show();
+    });
+ $("#image6").click(function ( event ) {
+      $(this).hide();
+      $("#image5").show();
+    }); 
+</script>
+</div>
+</div>
+<div class="box4"></div>
+<div class="box2"></div>
+
+<div class="box2"></div>
+<div class="box4B">
+<div class="box3">
+<img src="../images/0-dot_hor.png" id="image23" style="cursor:pointer;" />
+<img src="../images/1-dot_hor.png" id="image24" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image23").click(function ( event ) {
+      $(this).hide();
+      $("#image24").show();
+    });
+ $("#image24").click(function ( event ) {
+      $(this).hide();
+      $("#image23").show();
+    }); 
+</script>
+</div>
+</div>
+<div class="box4"></div>
+<div class="box4">
+<img src="../images/0-blank_bond.png" id="image25" style="cursor:pointer;" />
+<img src="../images/1-verticle_bond.png" id="image26" style='display:none; cursor:pointer;'/>
+<img src="../images/2-verticle_bond.png" id="image27" style='display:none; cursor:pointer;'/>
+<img src="../images/3-verticle_bond.png" id="image28" style='display:none; cursor:pointer;'/>
+<img src="../images/2-dot_bottom.png" id="image28x" style='display:none; cursor:pointer;'/>
+<script>
+ $("#image25").click(function ( event ) {
+      $(this).hide();
+      $("#image26").show();
+    });
+ $("#image26").click(function ( event ) {
+      $(this).hide();
+      $("#image27").show();
+    }); 
+	 $("#image27").click(function ( event ) {
+      $(this).hide();
+      $("#image28").show();
+    });
+ $("#image28").click(function ( event ) {
+      $(this).hide();
+      $("#image28x").show();
+    });
+ $("#image28x").click(function ( event ) {
+      $(this).hide();
+      $("#image25").show();
+    });
+</script>
+</div>
+<div class="box4"></div>
+<div class="box4B">
+<div class="box3">
+<img src="../images/0-dot_hor.png" id="image15" style="cursor:pointer;" />
+<img src="../images/1-dot_hor.png" id="image16" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image15").click(function ( event ) {
+      $(this).hide();
+      $("#image16").show();
+    });
+ $("#image16").click(function ( event ) {
+      $(this).hide();
+      $("#image15").show();
+    }); 
+</script>
+</div>
+</div>
+<div class="box2"></div>
+
+<div class="box2">
+<img src="../images/0-dot_vert.png" id="image9" style="cursor:pointer;" />
+<img src="../images/1-dot_vert.png" id="image10" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image9").click(function ( event ) {
+      $(this).hide();
+      $("#image10").show();
+    });
+ $("#image10").click(function ( event ) {
+      $(this).hide();
+      $("#image9").show();
+    }); 
+</script>
+</div>
+<div id="slot_4b" class="box4_dotted">4</div>
+<div class="box4">
+<img src="../images/0-blank_bond.png" id="image37" style="cursor:pointer;" />
+<img src="../images/1-horizontal_bond.png" id="image38" style='display:none; cursor:pointer;'/>
+<img src="../images/2-horizontal_bond.png" id="image39" style='display:none; cursor:pointer;'/>
+<img src="../images/3-horizontal_bond.png" id="image40" style='display:none; cursor:pointer;'/>
+<img src="../images/2-dot_right.png" id="image40x" style='display:none; cursor:pointer;'/>
+<script>
+ $("#image37").click(function ( event ) {
+      $(this).hide();
+      $("#image38").show();
+    });
+ $("#image38").click(function ( event ) {
+      $(this).hide();
+      $("#image39").show();
+    }); 
+	 $("#image39").click(function ( event ) {
+      $(this).hide();
+      $("#image40").show();
+    });
+ $("#image40").click(function ( event ) {
+      $(this).hide();
+      $("#image40x").show();
+    });
+$("#image40x").click(function ( event ) {
+      $(this).hide();
+      $("#image37").show();
+    });
+</script>
+</div>
+<div id="slot_5a" class="box4_dotted">center</div>
+<div class="box4">
+<img src="../images/0-blank_bond.png" id="image33" style="cursor:pointer;" />
+<img src="../images/1-horizontal_bond.png" id="image34" style='display:none; cursor:pointer;'/>
+<img src="../images/2-horizontal_bond.png" id="image35" style='display:none; cursor:pointer;'/>
+<img src="../images/3-horizontal_bond.png" id="image36" style='display:none; cursor:pointer;'/>
+<img src="../images/2-dot_left.png" id="image36x" style='display:none; cursor:pointer;'/>
+<script>
+ $("#image33").click(function ( event ) {
+      $(this).hide();
+      $("#image34").show();
+    });
+ $("#image34").click(function ( event ) {
+      $(this).hide();
+      $("#image35").show();
+    }); 
+	 $("#image35").click(function ( event ) {
+      $(this).hide();
+      $("#image36").show();
+    });
+ $("#image36").click(function ( event ) {
+      $(this).hide();
+      $("#image36x").show();
+    });
+ $("#image36x").click(function ( event ) {
+      $(this).hide();
+      $("#image33").show();
+    });	
+</script>
+</div>
+<div id="slot_2b" class="box4_dotted">2</div>
+<div class="box2">
+<img src="../images/0-dot_vert.png" id="image3" style="cursor:pointer;" />
+<img src="../images/1-dot_vert.png" id="image4" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image3").click(function ( event ) {
+      $(this).hide();
+      $("#image4").show();
+    });
+ $("#image4").click(function ( event ) {
+      $(this).hide();
+      $("#image3").show();
+    }); 
+</script>
+</div>
+
+<div class="box2"></div>
+<div class="box4T">
+<div class="box3">
+<img src="../images/0-dot_hor.png" id="image21" style="cursor:pointer;" />
+<img src="../images/1-dot_hor.png" id="image22" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image21").click(function ( event ) {
+      $(this).hide();
+      $("#image22").show();
+    });
+ $("#image22").click(function ( event ) {
+      $(this).hide();
+      $("#image21").show();
+    }); 
+</script>
+</div>
+</div>
+<div class="box4R"></div>
+<div class="box4">
+<img src="../images/0-blank_bond.png" id="image29" style="cursor:pointer;" />
+<img src="../images/1-verticle_bond.png" id="image30" style='display:none; cursor:pointer;'/>
+<img src="../images/2-verticle_bond.png" id="image31" style='display:none; cursor:pointer;'/>
+<img src="../images/3-verticle_bond.png" id="image32" style='display:none; cursor:pointer;'/>
+<img src="../images/2-dot_top.png" id="image32x" style='display:none; cursor:pointer;'/>
+<script>
+ $("#image29").click(function ( event ) {
+      $(this).hide();
+      $("#image30").show();
+    });
+ $("#image30").click(function ( event ) {
+      $(this).hide();
+      $("#image31").show();
+    }); 
+	 $("#image31").click(function ( event ) {
+      $(this).hide();
+      $("#image32").show();
+    });
+ $("#image32").click(function ( event ) {
+      $(this).hide();
+      $("#image32x").show();
+    });
+$("#image32x").click(function ( event ) {
+      $(this).hide();
+      $("#image29").show();
+    });
+</script>
+</div>
+<div class="box4R"></div>
+<div class="box4T">
+<div class="box3">
+<img src="../images/0-dot_hor.png" id="image17" style="cursor:pointer;" />
+<img src="../images/1-dot_hor.png" id="image18" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image17").click(function ( event ) {
+      $(this).hide();
+      $("#image18").show();
+    });
+ $("#image18").click(function ( event ) {
+      $(this).hide();
+      $("#image17").show();
+    }); 
+</script>
+</div>
+</div>
+<div class="box2"></div>
+
+<div class="box2"></div>
+<div class="box4"></div>
+<div class="box4R">
+<div class="box2">
+<img src="../images/0-dot_vert.png" id="image7" style="cursor:pointer;" />
+<img src="../images/1-dot_vert.png" id="image8" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image7").click(function ( event ) {
+      $(this).hide();
+      $("#image8").show();
+    });
+ $("#image8").click(function ( event ) {
+      $(this).hide();
+      $("#image7").show();
+    }); 
+</script>
+</div>
+</div>
+<div id="slot_3b" class="box4_dotted">3</div>
+<div class="box4L">
+<div class="box2">
+<img src="../images/0-dot_vert.png" id="image1" style="cursor:pointer;" />
+<img src="../images/1-dot_vert.png" id="image2" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image1").click(function ( event ) {
+      $(this).hide();
+      $("#image2").show();
+    });
+ $("#image2").click(function ( event ) {
+      $(this).hide();
+      $("#image1").show();
+    }); 
+</script>
+</div>
+</div>
+<div class="box4R"></div>
+<div class="box2"></div>
+
+<div class="box1"></div>
+<div class="box3"></div>
+<div class="box3"></div>
+<div class="box3">
+<img src="../images/0-dot_hor.png" id="image19" style="cursor:pointer;" />
+<img src="../images/1-dot_hor.png" id="image20" style='display:none; cursor:pointer;'/>
+<script>
+
+ $("#image19").click(function ( event ) {
+      $(this).hide();
+      $("#image20").show();
+    });
+ $("#image20").click(function ( event ) {
+      $(this).hide();
+      $("#image19").show();
+    }); 
+</script>
+</div>
+<div class="box3"></div>
+<div class="box3"></div>
+<div class="box1"></div>
+</div>
+</div>
+
+<div id="worksheet">
+<div id="molecule">CBr<span class="sub">4</span></div>
+
+<div id="valenceTotal">Total # of Valence Electrons
+<div class="info"><b>C:</b> 4e<sup>-</sup><br />
+<b>Br:</b> 7 x 4 = 28e<sup>-</sup><br />
+<b>Total:</b> 32e<sup>-</sup></div>
+</div>
+
+<div id="electronGroups">
+<div id="groupHeads"># of Electron Groups<br />
+(center atom only)</div>
+<div class="dot">4</div>
+</div>
+
+<div id="bonds_lonePairs">
+<div class="bonds_pairs"># of Bonds <br />
+<div class="dot" style="margin-left:28px; margin-right:28px;">4</div>
+</div>
+<div class="bonds_pairs"># of Lone Pairs<br />
+<div class="dot" style="margin-left:28px; margin-right:28px;">0</div>
+</div>
+</div>
+
+
+<div id="formalCharges">Formal Charges
+of Each Atom
+<div class="charges">
+C :<br />
+Br :</div>
+<div class="info">
+4 - 4 = 0<br />
+7 - 7 = 0</div>
+
+</div>
+
+
+
+<div id="elementBin">
+<div id="cardPile1">
+<div class="cards" id="element5A">
+<img src="../images/6-C.png" />
+</div>
+</div>
+
+<div id="cardPile2">
+<div class="cards" id="element4B">
+<img src="../images/35-Br.png" />
+</div>
+<div class="cards" id="element3B">
+<img src="../images/35-Br.png" />
+</div>
+<div class="cards" id="element2B">
+<img src="../images/35-Br.png" />
+</div>
+<div class="cards" id="element1B">
+<img src="../images/35-Br.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
