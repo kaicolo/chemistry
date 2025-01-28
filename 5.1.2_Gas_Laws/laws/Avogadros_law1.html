@@ -1,0 +1,817 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Avogadro's Law</title>
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+<script src="../javascript/jquery.min.js"></script>
+<script src="../javascript/jQueryRotate.js"></script>
+<script src="../javascript/CanvasApp.js"></script>
+<script src="../javascript/modernizr-2.6.2.js"></script>
+
+<script>
+$(document).ready(function() {  
+  // Uses Modernizr.js to check for canvas support
+  function canvasSupport() {
+    return Modernizr.canvas;
+  }
+  
+  canvasApp();
+  
+  function canvasApp() {
+    // Check for canvas support
+    if (!canvasSupport()) {
+      return;
+    } else {
+      // Grab the canvas and set the context to 2d
+      var theCanvas = document.getElementById('canvasOne');
+      var context = theCanvas.getContext("2d"); 
+    }
+    
+    // Variables
+    var numBalls = 15;  // number of balls
+    var maxSize = 15;
+    var minSize = 5;
+    var maxSpeed = maxSize + 5;
+    var balls = new Array();
+    var tempBall;
+    var tempX;
+    var tempY;
+    var tempSpeed;
+    var tempAngle;
+    var tempRadius;
+    var tempRadians;
+    var tempVelocityX;
+    var tempVelocityY;
+    
+    // Find spots to place each ball so none start on top of each other
+    for (var i = 0; i < numBalls; i += 1) {
+      tempRadius = 8;
+      var placeOK = false;
+      while (!placeOK) {
+        tempX = tempRadius * 3 + (Math.floor(Math.random() * theCanvas.width) - tempRadius * 3);
+        tempY = tempRadius * 3 + (Math.floor(Math.random() * theCanvas.height) - tempRadius * 3);
+        tempSpeed = 2;
+        tempAngle = Math.floor(Math.random() * 360);
+        tempRadians = tempAngle * Math.PI/180;
+        tempVelocityX = Math.cos(tempRadians) * tempSpeed;
+        tempVelocityY = Math.sin(tempRadians) * tempSpeed;
+        
+        tempBall = {
+          x: tempX, 
+          y: tempY, 
+          nextX: tempX, 
+          nextY: tempY, 
+          radius: tempRadius, 
+          speed: tempSpeed,
+          angle: tempAngle,
+          velocityX: tempVelocityX,
+          velocityY: tempVelocityY,
+          mass: tempRadius
+        };
+        placeOK = canStartHere(tempBall);
+      }
+      balls.push(tempBall);
+    }
+    
+    // Drawing interval
+    setInterval(drawScreen, 33);
+    
+    // Functions
+    // Returns true if a ball can start at given location, otherwise returns false
+    function canStartHere(ball) {
+      var retVal = true;
+      for (var i = 0; i < balls.length; i += 1) {
+        if (hitTestCircle(ball, balls[i])) {
+          retVal = false;
+        }
+      }
+      return retVal;
+    }
+    
+    // Circle collision test to see if two balls are touching
+    // Uses nextX and nextY to test for collision before it occurs
+    function hitTestCircle(ball1, ball2) {
+      var retVal = false;
+      var dx = ball1.nextX - ball2.nextX;
+      var dy = ball1.nextY - ball2.nextY;
+      var distance = (dx * dx + dy * dy);
+      if (distance <= (ball1.radius + ball2.radius) * (ball1.radius + ball2.radius) ) {
+        retVal = true;
+      }
+      return retVal;
+    }
+    
+    // Loops through all the balls in the balls array and updates the nextX and nextY properties
+    // with current x and y velocities for each ball
+    function update() {
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        ball.nextX = (ball.x += ball.velocityX);
+        ball.nextY = (ball.y += ball.velocityY);
+      }
+    }
+    
+    // We track balls by their center, so we test for all collision by adding or subtracting
+    // each ball's radius before testing for wall collision
+    function testWalls() {
+      var ball;
+      var testBall;
+      
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        
+        if (ball.nextX + ball.radius > theCanvas.width) { // right wall
+          ball.velocityX = ball.velocityX * (-1);
+          ball.nextX = theCanvas.width - ball.radius;
+          
+        } else if (ball.nextX - ball.radius < 0) { // top wall
+          ball.velocityX = ball.velocityX * (-1);
+          ball.nextX = ball.radius;
+          
+        } else if (ball.nextY + ball.radius > theCanvas.height) { // bottom wall
+          ball.velocityY = ball.velocityY * (-1);
+          ball.nextY = theCanvas.height - ball.radius;
+          
+        } else if (ball.nextY - ball.radius < 0) { // left wall
+          ball.velocityY = ball.velocityY * (-1);
+          ball.nextY = ball.radius;
+        }
+      }
+    }
+    
+    // Tests whether any balls have hit each other. 
+    // Uses two next loops to iterate through the balls array and test each ball against every other ball.
+    function collide() {
+      var ball;
+      var testBall;
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        for (var j = i + 1; j < balls.length; j += 1) {
+          testBall = balls[j];
+          if (hitTestCircle(ball, testBall)) {
+            collideBalls(ball, testBall);
+          }
+        }
+      }
+    }
+    
+    // Updates properties of colliding balls so they appear to bounce off each other.
+    // Uses nextX and nextY properties because we don't want to change where they are at the moment.
+    function collideBalls(ball1, ball2) {
+      var dx = ball1.nextX - ball2.nextX;
+      var dy = ball1.nextY - ball2.nextY;
+      var collisionAngle = Math.atan2(dy, dx);
+      
+      // Get velocities of each ball before collision
+      var speed1 = Math.sqrt(ball1.velocityX * ball1.velocityX + ball1.velocityY * ball1.velocityY);
+      var speed2 = Math.sqrt(ball2.velocityX * ball2.velocityX + ball2.velocityY * ball2.velocityY);
+      
+      // Get angles (in radians) for each ball, given current velocities
+      var direction1 = Math.atan2(ball1.velocityY, ball1.velocityX);
+      var direction2 = Math.atan2(ball2.velocityY, ball2.velocityX);
+      
+      // Rotate velocity vectors so we can plug into equation for conservation of momentum
+      var rotatedVelocityX1 = speed1 * Math.cos(direction1 - collisionAngle);
+      var rotatedVelocityY1 = speed1 * Math.sin(direction1 - collisionAngle);
+      var rotatedVelocityX2 = speed2 * Math.cos(direction2 - collisionAngle);
+      var rotatedVelocityY2 = speed2 * Math.sin(direction2 - collisionAngle);
+      
+      // Update actual velocities using conservation of momentum
+      /* Uses the following formulas:
+           velocity1 = ((mass1 - mass2) * velocity1 + 2*mass2 * velocity2) / (mass1 + mass2)
+           velocity2 = ((mass2 - mass1) * velocity2 + 2*mass1 * velocity1) / (mass1 + mass2)
+      */
+      var finalVelocityX1 = ((ball1.mass - ball2.mass) * rotatedVelocityX1 + (ball2.mass + ball2.mass) * rotatedVelocityX2) 
+        / (ball1.mass + ball2.mass);
+      var finalVelocityX2 = ((ball1.mass + ball1.mass) * rotatedVelocityX1 + (ball2.mass - ball1.mass) * rotatedVelocityX2) 
+        / (ball1.mass + ball2.mass);
+      
+      // Y velocities remain constant
+      var finalVelocityY1 = rotatedVelocityY1;
+      var finalVelocityY2 = rotatedVelocityY2;
+      
+      // Rotate angles back again so the collision angle is preserved
+      ball1.velocityX = Math.cos(collisionAngle) * finalVelocityX1 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityY1;
+      ball1.velocityY = Math.sin(collisionAngle) * finalVelocityX1 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityY1;
+      ball2.velocityX = Math.cos(collisionAngle) * finalVelocityX2 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityY2;
+      ball2.velocityY = Math.sin(collisionAngle) * finalVelocityX2 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityY2;
+      
+      // Update nextX and nextY for both balls so we can use them in render() or another collision
+      ball1.nextX += ball1.velocityX;
+      ball1.nextY += ball1.velocityY;
+      ball2.nextX += ball2.velocityX;
+      ball2.nextY += ball2.velocityY;
+    }
+    
+    // Draws and updates each ball
+    function render() {
+      var ball;
+      context.fillStyle = "#a93131";
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        ball.x = ball.nextX;
+        ball.y = ball.nextY;
+        
+        context.beginPath();
+        context.arc(ball.x, ball.y, ball.radius, 0, Math.PI *2, true);
+        context.closePath();
+        context.fill();
+      }
+    }
+    
+    // Draws/updates the screen
+    function drawScreen() {
+      // Reset canvas
+      context.fillStyle = "#EEEEEE";
+      context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+      
+      // Outside border
+      context.strokeStyle = "#EEEEEE";
+      context.strokeRect(-0, 0, theCanvas.width - 0, theCanvas.height - 0);
+    
+      update();
+      testWalls();
+      collide();
+      render();
+    } 
+  }
+  
+});
+</script>
+
+<script>
+$(document).ready(function() {  
+  // Uses Modernizr.js to check for canvas support
+  function canvasSupport() {
+    return Modernizr.canvas;
+  }
+  
+  canvasApp();
+  
+  function canvasApp() {
+    // Check for canvas support
+    if (!canvasSupport()) {
+      return;
+    } else {
+      // Grab the canvas and set the context to 2d
+      var theCanvas = document.getElementById('canvasThree');
+      var context = theCanvas.getContext("2d"); 
+    }
+    
+    // Variables
+    var numBalls = 100;  // number of balls
+    var maxSize = 15;
+    var minSize = 5;
+    var maxSpeed = maxSize + 5;
+    var balls = new Array();
+    var tempBall;
+    var tempX;
+    var tempY;
+    var tempSpeed;
+    var tempAngle;
+    var tempRadius;
+    var tempRadians;
+    var tempVelocityX;
+    var tempVelocityY;
+    
+    // Find spots to place each ball so none start on top of each other
+    for (var i = 0; i < numBalls; i += 1) {
+      tempRadius = 8;
+      var placeOK = false;
+      while (!placeOK) {
+        tempX = tempRadius * 3 + (Math.floor(Math.random() * theCanvas.width) - tempRadius * 3);
+        tempY = tempRadius * 3 + (Math.floor(Math.random() * theCanvas.height) - tempRadius * 3);
+        tempSpeed = 2;
+        tempAngle = Math.floor(Math.random() * 360);
+        tempRadians = tempAngle * Math.PI/180;
+        tempVelocityX = Math.cos(tempRadians) * tempSpeed;
+        tempVelocityY = Math.sin(tempRadians) * tempSpeed;
+        
+        tempBall = {
+          x: tempX, 
+          y: tempY, 
+          nextX: tempX, 
+          nextY: tempY, 
+          radius: tempRadius, 
+          speed: tempSpeed,
+          angle: tempAngle,
+          velocityX: tempVelocityX,
+          velocityY: tempVelocityY,
+          mass: tempRadius
+        };
+        placeOK = canStartHere(tempBall);
+      }
+      balls.push(tempBall);
+    }
+    
+    // Drawing interval
+    setInterval(drawScreen, 33);
+    
+    // Functions
+    // Returns true if a ball can start at given location, otherwise returns false
+    function canStartHere(ball) {
+      var retVal = true;
+      for (var i = 0; i < balls.length; i += 1) {
+        if (hitTestCircle(ball, balls[i])) {
+          retVal = false;
+        }
+      }
+      return retVal;
+    }
+    
+    // Circle collision test to see if two balls are touching
+    // Uses nextX and nextY to test for collision before it occurs
+    function hitTestCircle(ball1, ball2) {
+      var retVal = false;
+      var dx = ball1.nextX - ball2.nextX;
+      var dy = ball1.nextY - ball2.nextY;
+      var distance = (dx * dx + dy * dy);
+      if (distance <= (ball1.radius + ball2.radius) * (ball1.radius + ball2.radius) ) {
+        retVal = true;
+      }
+      return retVal;
+    }
+    
+    // Loops through all the balls in the balls array and updates the nextX and nextY properties
+    // with current x and y velocities for each ball
+    function update() {
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        ball.nextX = (ball.x += ball.velocityX);
+        ball.nextY = (ball.y += ball.velocityY);
+      }
+    }
+    
+    // We track balls by their center, so we test for all collision by adding or subtracting
+    // each ball's radius before testing for wall collision
+    function testWalls() {
+      var ball;
+      var testBall;
+      
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        
+        if (ball.nextX + ball.radius > theCanvas.width) { // right wall
+          ball.velocityX = ball.velocityX * (-1);
+          ball.nextX = theCanvas.width - ball.radius;
+          
+        } else if (ball.nextX - ball.radius < 0) { // top wall
+          ball.velocityX = ball.velocityX * (-1);
+          ball.nextX = ball.radius;
+          
+        } else if (ball.nextY + ball.radius > theCanvas.height) { // bottom wall
+          ball.velocityY = ball.velocityY * (-1);
+          ball.nextY = theCanvas.height - ball.radius;
+          
+        } else if (ball.nextY - ball.radius < 0) { // left wall
+          ball.velocityY = ball.velocityY * (-1);
+          ball.nextY = ball.radius;
+        }
+      }
+    }
+    
+    // Tests whether any balls have hit each other. 
+    // Uses two next loops to iterate through the balls array and test each ball against every other ball.
+    function collide() {
+      var ball;
+      var testBall;
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        for (var j = i + 1; j < balls.length; j += 1) {
+          testBall = balls[j];
+          if (hitTestCircle(ball, testBall)) {
+            collideBalls(ball, testBall);
+          }
+        }
+      }
+    }
+    
+    // Updates properties of colliding balls so they appear to bounce off each other.
+    // Uses nextX and nextY properties because we don't want to change where they are at the moment.
+    function collideBalls(ball1, ball2) {
+      var dx = ball1.nextX - ball2.nextX;
+      var dy = ball1.nextY - ball2.nextY;
+      var collisionAngle = Math.atan2(dy, dx);
+      
+      // Get velocities of each ball before collision
+      var speed1 = Math.sqrt(ball1.velocityX * ball1.velocityX + ball1.velocityY * ball1.velocityY);
+      var speed2 = Math.sqrt(ball2.velocityX * ball2.velocityX + ball2.velocityY * ball2.velocityY);
+      
+      // Get angles (in radians) for each ball, given current velocities
+      var direction1 = Math.atan2(ball1.velocityY, ball1.velocityX);
+      var direction2 = Math.atan2(ball2.velocityY, ball2.velocityX);
+      
+      // Rotate velocity vectors so we can plug into equation for conservation of momentum
+      var rotatedVelocityX1 = speed1 * Math.cos(direction1 - collisionAngle);
+      var rotatedVelocityY1 = speed1 * Math.sin(direction1 - collisionAngle);
+      var rotatedVelocityX2 = speed2 * Math.cos(direction2 - collisionAngle);
+      var rotatedVelocityY2 = speed2 * Math.sin(direction2 - collisionAngle);
+      
+      // Update actual velocities using conservation of momentum
+      /* Uses the following formulas:
+           velocity1 = ((mass1 - mass2) * velocity1 + 2*mass2 * velocity2) / (mass1 + mass2)
+           velocity2 = ((mass2 - mass1) * velocity2 + 2*mass1 * velocity1) / (mass1 + mass2)
+      */
+      var finalVelocityX1 = ((ball1.mass - ball2.mass) * rotatedVelocityX1 + (ball2.mass + ball2.mass) * rotatedVelocityX2) 
+        / (ball1.mass + ball2.mass);
+      var finalVelocityX2 = ((ball1.mass + ball1.mass) * rotatedVelocityX1 + (ball2.mass - ball1.mass) * rotatedVelocityX2) 
+        / (ball1.mass + ball2.mass);
+      
+      // Y velocities remain constant
+      var finalVelocityY1 = rotatedVelocityY1;
+      var finalVelocityY2 = rotatedVelocityY2;
+      
+      // Rotate angles back again so the collision angle is preserved
+      ball1.velocityX = Math.cos(collisionAngle) * finalVelocityX1 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityY1;
+      ball1.velocityY = Math.sin(collisionAngle) * finalVelocityX1 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityY1;
+      ball2.velocityX = Math.cos(collisionAngle) * finalVelocityX2 + Math.cos(collisionAngle + Math.PI/2) * finalVelocityY2;
+      ball2.velocityY = Math.sin(collisionAngle) * finalVelocityX2 + Math.sin(collisionAngle + Math.PI/2) * finalVelocityY2;
+      
+      // Update nextX and nextY for both balls so we can use them in render() or another collision
+      ball1.nextX += ball1.velocityX;
+      ball1.nextY += ball1.velocityY;
+      ball2.nextX += ball2.velocityX;
+      ball2.nextY += ball2.velocityY;
+    }
+    
+    // Draws and updates each ball
+    function render() {
+      var ball;
+      context.fillStyle = "#a93131";
+      for (var i = 0; i < balls.length; i += 1) {
+        ball = balls[i];
+        ball.x = ball.nextX;
+        ball.y = ball.nextY;
+        
+        context.beginPath();
+        context.arc(ball.x, ball.y, ball.radius, 0, Math.PI *2, true);
+        context.closePath();
+        context.fill();
+      }
+    }
+    
+    // Draws/updates the screen
+    function drawScreen() {
+      // Reset canvas
+      context.fillStyle = "#EEEEEE";
+      context.fillRect(0, 0, theCanvas.width, theCanvas.height);
+      
+      // Outside border
+      context.strokeStyle = "#EEEEEE";
+      context.strokeRect(-0, 0, theCanvas.width - 0, theCanvas.height - 0);
+    
+      update();
+      testWalls();
+      collide();
+      render();
+    } 
+  }
+  
+});
+</script>
+
+
+
+<style type="text/css">
+#container {
+	background-image:url(../images/velvet_background.png);
+	width:720px;
+	height:480px;
+	padding:10px;
+}
+
+
+#dashboard {
+	background-image:url(../images/dashboard4.png);
+	width:550px;
+	height:460px;
+	padding:10px;
+	float:left;
+	border-top-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+}
+
+#hull {
+	width:200px;
+	height:460px;
+	float:left;	
+}
+
+#piston {
+	background-image:url(../images/piston_back_closed.png);
+	width:auto;
+	height:98px;
+	overflow:hidden;
+}
+
+#topLid {
+	background-image:url(../images/lid.png);
+	width:198px;
+	height:80px;
+	overflow:hidden;
+	border:solid 1px #000000;
+	z-index:1000;
+}
+
+
+#bottomLid {
+	background-image:url(../images/lid.png);
+	width:198px;
+	height:80px;
+	overflow:hidden;
+	border:solid 1px #000000;
+}
+
+#controls {
+	width:340px;
+	height:460px;
+	float: right;
+	margin-left:10px;
+	text-align:center;
+}
+
+
+#dialFace {
+	background-image:url(../images/dial_face.png);
+	width:160px;
+	height:160px;
+	margin-left:;
+	margin-right:6px;
+	margin-top:75px;
+	margin-bottom:25px;
+	float:right;
+}
+
+#button {
+	background-image: url(../images/button.png);
+	width: 70px;
+	height: 70px;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFF;
+	line-height: 70px;
+	position: absolute;
+	z-index: 1000;
+	left: 94px;
+	top: 415px;
+}
+
+
+#navigation {
+	width:150px;
+	height:480px;
+	float:left;
+	padding-top:1px;
+}
+
+.nav_button {
+	width:auto;
+	height:119px;
+	background-color:#1F53A1;
+	margin-bottom:1px;
+	text-align:center;
+	line-height:119px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+.nav_button:hover {
+	width:auto;
+	height:119px;
+	background-color:#39F;
+	margin-bottom:1px;
+	text-align:center;
+	line-height:119px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+
+.nav_buttonSelect {
+	width:auto;
+	height:119px;
+	background-color:#003;
+	margin-bottom:1px;
+	text-align:center;
+	line-height:119px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	color:#FFF;
+	cursor:pointer;
+}
+
+#glass {
+	background-image:url(../images/glass.png);
+	background-repeat:no-repeat;
+	width:200px;
+	height:464px;
+	position:absolute;
+	z-index:900;
+}
+
+#bottle {
+	
+	width:53px;
+	height:350px;
+	position:relative;
+	z-index:700;
+	float:left;
+	margin-top:32px;
+	margin-left:45px;
+		
+}
+
+#volume {
+	background-image:
+	url(../images/point.png);
+	background-repeat:no-repeat;
+	width:25px;
+	height:151px;
+	position:absolute;
+	margin-top:40px;
+	margin-left:2px;
+	margin-bottom:10px;
+	bottom:0;
+	
+}
+
+
+#number {
+	background-image:url(../images/molerity.png);
+	width:85px;
+	height:152px;
+	position:absolute;
+	margin-top:px;
+	margin-left:px;
+	margin-bottom:px;
+	bottom:0;	
+}
+
+.counter {
+	width: 85px;
+	height: 73px;
+	position: relative;
+	z-index: 700;
+	float: left;
+	margin-top: 149px;
+	margin-left: 117px;
+	overflow:hidden;	
+}
+
+#canvasThree {
+	width: 200px;
+	height: 300px;
+	z-index: 500;
+	position: absolute;
+	top: 110px;
+	left: 28px;
+	display:none;
+}
+
+#balloon_button {
+	background-image: url(../images/balloon_button.png);
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	cursor: pointer;
+	left: 463px;
+	top: 393px;
+}
+
+#balloon_button:hover {
+	background-image: url(../images/balloon_buttonOver.png);
+	width: 75px;
+	height: 75px;
+	position: absolute;
+	cursor: pointer;
+	left: 462px;
+	top: 393px;
+}
+
+
+img { border:none; }
+
+<!--
+a:link {color: #fff; text-decoration: none; }
+a:active {color: #fff; text-decoration: none; }
+a:visited {color: #fff; text-decoration: none; }
+a:hover {color: #fff; text-decoration: none; }
+-->
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+$(document).ready(function(){
+  $("#button").toggle(function(){
+    $("#canvasOne").animate({height:300, width:200},1400);
+  },function(){
+    $("#canvasOne").animate({height:200, width:200},1400);
+  });
+   $("#button").toggle(function(){
+    $("#piston").animate({height:0},1400);
+  },function(){
+    $("#piston").animate({height:98},1400);
+  });
+
+$("#button").toggle(function(){
+    $("#volume").animate({height:305},1400);
+  },function(){
+    $("#volume").animate({height:151},2100);
+});
+
+$("#button").toggle(function(){
+    $("#number").animate({height:76},2100);
+  },function(){
+    $("#number").animate({height:152},2100);
+});
+
+
+});
+</script>
+
+
+<script>
+$(document).ready(
+    function() {
+        $("#button").click(function() {
+            $("#canvasThree").fadeToggle(1400);
+			
+			
+        });
+    });
+</script>
+
+
+<div id="container">
+<div id="dashboard">
+<div id="glass"></div>
+  <div id="hull">
+  
+  
+    
+  <div id="piston"></div>
+<div id="topLid"></div>
+
+<canvas id="canvasOne" width="200" height="200">
+</canvas>
+
+<canvas id="canvasThree" width="200" height="300">
+</canvas>
+
+<div id="bottomLid"></div>
+
+
+</div>
+
+
+
+
+
+
+<div id="controls">
+  <div id="button">press</div>
+  <div id="bottle">
+    <div id="volume"></div>    
+  </div>
+
+
+
+<div class="counter">
+<div id="number"></div>
+</div>
+
+<a href="Avogadros_law2.html"><div id="balloon_button"></div></a>
+
+
+
+</div>
+</div>
+
+<div id="navigation">
+<a href="Boyles_law.html"><div class="nav_button">Boyles' Law</div></a>
+
+<a href="Charles_law.html"><div class="nav_button">Charles' Law</div></a>
+
+<a href="Gay_Lussac_law.html">
+<div class="nav_button">Gay-Lussac's Law</div></a>
+
+<div class="nav_buttonSelect">Avogradro's Law</div>
+</div>
+
+</div>
+
+</body>
+</html>
