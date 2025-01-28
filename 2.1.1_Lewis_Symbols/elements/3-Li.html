@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lithium</title>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script type="text/javascript" src="../javascript/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+  $("#button").click(function(){
+    $("#answer").toggle();
+  });
+});
+</script>
+
+
+<link href="../css/lewis_dot.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+    <!-- root element for the items -->
+<div id="container">
+<div id="header"></div>
+<div id="title"><b>Lithium</b></div>
+<div id="group"><img src="../images/G1A.png" /></div>
+<div id="slate">
+
+<!--WORKING--->
+<div id="working">
+<div class="row1">
+<div class="blank"></div>
+<div class="slot1">
+<img src="../images/1.png" id="image1" style="cursor:pointer;" />
+<img src="../images/2.png" id="image2" style='display:none; cursor:pointer;'/>
+<img src="../images/3.png" id="image3" style='display:none;cursor:pointer;'/>
+<script>
+
+ $("#image1").click(function ( event ) {
+      $(this).hide();
+      $("#image2").show();
+    });
+ $("#image2").click(function ( event ) {
+      $(this).hide();
+      $("#image3").show();
+    });
+	 $("#image3").click(function ( event ) {
+      $(this).hide();
+      $("#image1").show();
+    });
+ 
+</script>
+</div>
+<div class="blank"></div>
+</div>
+<div class="row2">
+<div class="column">
+<div class="slot2">
+<img src="../images/4.png" id="image10" style="cursor:pointer;" />
+<img src="../images/5.png" id="image11" style='display:none; cursor:pointer;'/>
+<img src="../images/6.png" id="image12" style='display:none;cursor:pointer;'/>
+<script>
+
+ $("#image10").click(function ( event ) {
+      $(this).hide();
+      $("#image11").show();
+    });
+ $("#image11").click(function ( event ) {
+      $(this).hide();
+      $("#image12").show();
+    });
+	 $("#image12").click(function ( event ) {
+      $(this).hide();
+      $("#image10").show();
+    });
+ 
+</script>
+</div>
+</div>
+<div class="symbol"><b>Li</b></div>
+<div class="column">
+<div class="slot2">
+<img src="../images/4.png" id="image7" style="cursor:pointer;" />
+<img src="../images/5.png" id="image8" style='display:none; cursor:pointer;'/>
+<img src="../images/6.png" id="image9" style='display:none;cursor:pointer;'/>
+<script>
+
+ $("#image7").click(function ( event ) {
+      $(this).hide();
+      $("#image8").show();
+    });
+ $("#image8").click(function ( event ) {
+      $(this).hide();
+      $("#image9").show();
+    });
+	 $("#image9").click(function ( event ) {
+      $(this).hide();
+      $("#image7").show();
+    });
+ 
+</script>
+</div>
+</div>
+</div>
+<div class="row"><div class="blank"></div>
+<div class="slot1"><img src="../images/1.png" id="image4" style="cursor:pointer;" />
+<img src="../images/2.png" id="image5" style='display:none; cursor:pointer;'/>
+<img src="../images/3.png" id="image6" style='display:none;cursor:pointer;'/>
+<script>
+
+ $("#image4").click(function ( event ) {
+      $(this).hide();
+      $("#image5").show();
+    });
+ $("#image5").click(function ( event ) {
+      $(this).hide();
+      $("#image6").show();
+    });
+	 $("#image6").click(function ( event ) {
+      $(this).hide();
+      $("#image4").show();
+    });
+ 
+</script></div>
+<div class="blank"></div>
+</div>
+</div>
+
+
+
+
+<!--ANSWER--->
+<div id="answer">
+<div class="row1">
+<div class="blank"></div>
+<div class="slot1">
+<img src="../images/1a.png"/>
+</div>
+<div class="blank"></div>
+</div>
+<div class="row2">
+<div class="column">
+<div class="slot2">
+<img src="../images/4a.png"/>
+</div>
+</div>
+<div class="symbol"><b>Li</b></div>
+<div class="column">
+<div class="slot2">
+<img src="../images/5a.png"/>
+</div>
+</div>
+</div>
+<div class="row"><div class="blank"></div>
+<div class="slot1"><img src="../images/1a.png"/>
+</div>
+<div class="blank"></div>
+</div>
+</div>
+</div>
+<div id="navi">
+  
+<div id="button" class="check" onclick="changeclass();"></div>
+
+<script>
+$('#button').click(function() {
+    $(this).toggleClass('check');
+    $(this).toggleClass('uncheck');
+});
+</script>
+
+</div>
+</div>
+
+</body>
+</html>
