@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+$(init);
+
+function init() {
+
+
+    $('#label_1').data( 'number', 1 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#labelPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#label_2').data( 'number', 2 ).attr( 'id', 'card'+2 ).draggable( {
+      containment: '#container',
+      stack: '#labelPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#label_3').data( 'number', 3 ).attr( 'id', 'card'+3 ).draggable( {
+      containment: '#container',
+      stack: '#labelPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#label_4').data( 'number', 4 ).attr( 'id', 'card'+4 ).draggable( {
+      containment: '#container',
+      stack: '#labelPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#label_5').data( 'number', 5 ).attr( 'id', 'card'+5 ).draggable( {
+      containment: '#container',
+      stack: '#labelPile div',
+      cursor: 'move',
+      revert: true
+    } );
+	
+	
+	// Create the element slots
+
+    $('#slot_1').data( 'number', 1 ).droppable( {
+      accept: '#labelPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_2').data( 'number', 2 ).droppable( {
+      accept: '#labelPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_3').data( 'number', 3 ).droppable( {
+      accept: '#labelPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_4').data( 'number', 4 ).droppable( {
+      accept: '#labelPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_5').data( 'number', 5 ).droppable( {
+      accept: '#labelPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+}
+
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+
+  if ( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+  } 
+}
+
+</script>
+
+<style type="text/css">
+#container {
+	width:720px;
+	height:480px;
+	background-image:url(images/atom.png);
+	margin-left:auto;
+	margin-right:auto;
+	z-index:-1000;
+	overflow:hidden;
+}
+
+#labelPile {
+	width: 208px;
+	height: 80px;
+	position: relative;
+	left: 460px;
+	top: 100px;
+	text-align: center;
+	padding: 5px;
+}
+
+
+
+#labelSlots {
+	background-color: #060;
+	width: 434px;
+	height: 434px;
+	position: absolute;
+	left: 244px;
+	top: 32px;
+}
+
+/* Individual labels and slots */
+
+#labelSlots div {
+    float: left;
+    width: 145px;
+    height:145px;
+    padding: 0px;
+    padding-bottom: 0;
+    border: 0px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px;
+    margin: 0 0 0 0px;
+    background:;
+}
+
+#labelPile div {
+    float: left;
+    width: 30px;
+    height:30px;
+    padding: 0px;
+    padding-bottom: 0;
+    border: 0px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px;
+    margin: 0 0 0 0px;
+    background:;
+}
+
+#labelSlots div:first-child, #labelPile div:first-child {
+  margin-left: 0;
+}
+
+#labelSlots div.hovered {
+  background:#03C;
+}
+
+#labelSlots div {
+  border: 0px dashed #333;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+<div id="container">
+
+
+
+
+<div id="labelSlots">
+  <div id="slot_1" style="position: relative ; left: 150px; top: 150px;"></div>
+</div>
+  
+  <div id="labelPile">
+   
+   <div id="label_1" style="margin-right:5px;" ><img src="images/electron_label.png" width="30" height="30" id="electron" width:166; height:34;" /></div>
+   
+   <div id="label_2" style="margin-right:5px;"><img id="electron_cloud" src="images/electroncloud_label.png" width:166; height:34;" /></div>
+   
+   <div id="label_3"><img id="nucleus" src="images/nucleus_label.png" width:166; height:34;" /></div>
+   
+   <div id="label_4" style="margin-left:80px; margin-right:5px; margin-top:5px;"><img id="proton" src="images/proton_label.png" width:166; height:34;" /></div>
+   
+   <div id="label_5" style="margin-top:5px;"><img id="neutron" src="images/neutron_label.png" width:166; height:34;" /></div>
+    </div>
+  
+</div>
+
+
+</body>
+</html>

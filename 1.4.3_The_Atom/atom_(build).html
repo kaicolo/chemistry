@@ -1,0 +1,360 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Atom</title>
+
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>-->
+<script type="text/javascript" src="javascript/jquery.min.js"></script>
+<script type="text/javascript" src="javascript/jquery-ui.min.js"></script>
+      
+      
+<script type="text/javascript">
+
+$(init);
+
+function init() {
+
+			<!-- PROTON SCRIPT -->
+    $('#proton_1').data( 'number', 1 ).attr( 'id', 'card'+1 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_2').data( 'number', 2 ).attr( 'id', 'card'+2 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_3').data( 'number', 3 ).attr( 'id', 'card'+3 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_4').data( 'number', 4 ).attr( 'id', 'card'+4 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_5').data( 'number', 5 ).attr( 'id', 'card'+5 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+	
+	    $('#proton_6').data( 'number', 6 ).attr( 'id', 'card'+6 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_7').data( 'number', 7 ).attr( 'id', 'card'+7 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_8').data( 'number', 8 ).attr( 'id', 'card'+8 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_9').data( 'number', 9 ).attr( 'id', 'card'+9 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+
+        $('#proton_10').data( 'number', 10 ).attr( 'id', 'card'+10 ).draggable( {
+      containment: '#container',
+      stack: '#protonPile div',
+      cursor: 'move',
+      revert: true
+    } );
+	
+	
+	// Create the PROTON slots
+
+    $('#slot_1').data( 'number', 1 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_2').data( 'number', 2 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_3a').data( 'number', 3 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_4a').data( 'number', 4 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_5a').data( 'number', 5 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+	    $('#slot_6a').data( 'number', 6 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_7a').data( 'number', 7 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_8a').data( 'number', 8 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_9a').data( 'number', 9 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+
+        $('#slot_10a').data( 'number', 10 ).droppable( {
+      accept: '#protonPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+}
+
+function handleCardDrop( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+
+  if ( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.draggable( 'option', 'revert', false );
+  } 
+}
+
+</script>
+
+
+
+<style type="text/css">
+#container {
+	background-image:url(images/atom_build.png);
+	width:720px;
+	height:480px;
+	z-index:-1000;
+	
+	
+}
+
+#navagator {
+	background-color:;
+	width: 230px;
+	height: 460px;
+	float: left;
+	padding:10px;
+	float:right;
+}
+
+#symbol {
+	background-color:#;
+	width:auto;
+	height:80px;
+}
+
+#detail {
+	background-color:#;
+	width: auto;
+	height: 65px;
+	padding: 5px 10px 10px 15px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color:#666;
+	
+}
+
+.particle {
+	margin:2px;
+}
+
+#protonPile {
+	background-color:#;
+	width:auto;
+	height:60px;
+	padding:25px 25px 15px 15px;
+}
+
+#neutrons {
+	background-color:#;
+	width:auto;
+	height:60px;
+	padding:28px 25px 15px 15px;
+}
+
+#electrons {
+	background-color:#;
+	width:auto;
+	height:50px;
+	padding:25px 25px 20px 15px;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+
+img {border:none;
+}
+
+
+
+
+
+#protonSlots {
+	background-color:;
+	width: 144px;
+	height: 145px;
+	position: absolute;
+	left: 170px;
+	top: 187px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px;
+	margin: 0 0 0 0px;
+	z-index: 2000;
+}
+
+/* Individual labels and slots */
+
+#protonlSlots div {
+    float: ;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border: 0px solid #333;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    margin: 0 0 0 0px;
+	left:px;
+	position: relative ;
+}
+
+#protonPile div {
+    float: left;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    padding-bottom: 0;
+    border: 0px solid #333;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 5px;
+    margin: 0 0 0 0px;
+    background:;
+}
+
+#protonSlots div:first-child, #labelPile div:first-child {
+  margin-left: 0;
+}
+
+#protonSlots div.hovered {
+  background:#03C;
+}
+
+#protonSlots div {
+  border: 0px dashed #333;
+}
+
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<div id="container">
+<div id="navagator">
+
+<div id="symbol"></div>
+
+<div id="detail">
+  Hydrogen<br />
+  Atomic number - 1<br />
+  Atomic Mass - 1.079
+</div>
+
+<div id="protonSlots"> 
+  <div id="slot_1" style="position: absolute; left: 52px; top: -1px; width: 30px; height: 30px; -moz-border-radius: 100px; -webkit-border-radius: 100px; border-radius: 100px;z-index: ;"></div>
+  
+   <div id="slot_2" style="position: absolute; left: 24px; top: 13px; width: 30px; height: 30px; -moz-border-radius: 100px; -webkit-border-radius: 100px; border-radius: 100px;z-index: ;"></div>
+  </div>
+
+<div id="protonPile">
+<div id="proton_1"><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /></div>
+
+<div id="proton_2"><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /></div>
+
+
+<img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" /><img class="particle" src="images/proton.png" width="30" height="30" alt="proton" />
+</div>
+
+
+
+
+
+<div id="neutrons">
+<img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" /><img class="particle" src="images/neutron.png" width="30" height="30" alt="neutron" />
+</div>
+
+<div id="electrons">
+<img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" /><img class="particle" src="images/electron.png" width="30" height="30" alt="electron" />
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
